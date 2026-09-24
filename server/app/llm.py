@@ -54,14 +54,14 @@ def _client():
     return OpenAI(api_key=config.OPENAI_API_KEY, timeout=30)
 
 
-def parse(message, history=()):
-    """history: 최근 대화 [(role, text)] 몇 개 (맥락용)."""
+def parse(message, history=(), use_llm=True):
+    """history: 최근 대화 [(role, text)] 몇 개 (맥락용). use_llm=False: 서비스 전체 하루 한도를 넘어 규칙 파서로."""
     if config.LLM_MOCK:
         import random
         time.sleep(random.uniform(1.5, 2.5))   # 실제 gpt-5-mini 응답 시간 흉내
         return dict(fallback(message), _meta={'status': 'mock', 'model': 'mock', 'prompt_version': prompt_version()})
-    if not config.OPENAI_API_KEY:
-        return dict(fallback(message), _meta={'status': 'mock', 'model': 'rules', 'prompt_version': prompt_version()})
+    if not config.OPENAI_API_KEY or not use_llm:
+        return dict(fallback(message), _meta={'status': 'mock' if use_llm else 'budget', 'model': 'rules', 'prompt_version': prompt_version()})
     t0 = time.time()
     import datetime
     today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).date()
@@ -69,10 +69,15 @@ def parse(message, history=()):
     for role, text in list(history)[-6:]:
         msgs.append({'role': 'user' if role == 'user' else 'assistant', 'content': text})
     msgs.append({'role': 'user', 'content': message})
-    r = _client().chat.completions.create(
-        model=config.OPENAI_MODEL, messages=msgs, reasoning_effort='minimal',
-        response_format={'type': 'json_schema', 'json_schema': {'name': 'turn', 'strict': True, 'schema': SCHEMA}})
-    out = json.loads(r.choices[0].message.content)
+    try:
+        r = _client().chat.completions.create(
+            model=config.OPENAI_MODEL, messages=msgs, reasoning_effort='minimal',
+            response_format={'type': 'json_schema', 'json_schema': {'name': 'turn', 'strict': True, 'schema': SCHEMA}})
+        out = json.loads(r.choices[0].message.content)
+    except Exception as ex:   # 크레딧 소진(insufficient_quota)·장애·시간 초과 → 규칙 파서로 (대화는 계속)
+        err = getattr(ex, 'code', None) or type(ex).__name__
+        return dict(fallback(message), _meta={'status': 'error', 'error': str(err)[:60], 'model': 'rules', 'prompt_version': prompt_version(),
+                                               'latency_ms': round((time.time() - t0) * 1000)})
     u = r.usage.model_dump() if r.usage else {}
     out['_usage'] = u
     out['_meta'] = {'status': 'ok', 'model': config.OPENAI_MODEL, 'prompt_version': prompt_version(), 'latency_ms': round((time.time() - t0) * 1000),

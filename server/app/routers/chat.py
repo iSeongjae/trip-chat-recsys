@@ -1,9 +1,9 @@
 """여행챗: 대화·칩 추천·위치·여행 종료. 대화(추천) 한 번마다 turn_logs 한 줄."""
 import json, time, datetime, re
 from typing import Optional
-from fastapi import APIRouter, Depends, HTTPException, Request
-from pydantic import BaseModel
-from .. import db, llm, service as sv, config
+from fastapi import APIRouter, Depends, HTTPException, Request, Query
+from pydantic import BaseModel, Field
+from .. import db, llm, service as sv, config, security
 from ..auth import current_user
 
 router = APIRouter(prefix='/api')
@@ -15,25 +15,28 @@ OUTSIDE = '지금 위치가 일본이 아니라서 GPS 는 쓰지 않았어요. 
 class Loc(BaseModel):
     lat: Optional[float] = None
     lon: Optional[float] = None
-    name: Optional[str] = None     # 목록·검색에서 고른 곳이면 이름 (GPS 가 아님)
-    kind: Optional[str] = None     # 공항 | 역 | 장소 (시작 위치 방식 기록용)
+    name: Optional[str] = Field(None, max_length=100)   # 목록·검색에서 고른 곳이면 이름 (GPS 가 아님)
+    kind: Optional[str] = Field(None, max_length=10)    # 공항 | 역 | 장소 (시작 위치 방식 기록용)
 
 
 class ChatIn(Loc):
-    message: str
+    message: str = Field(min_length=1, max_length=300)   # LLM 입력 토큰(비용)·로그 크기 상한
 
 
 class ChipIn(Loc):
-    category: Optional[str] = None   # meal|cafe|bar|sight|walk|shop|rest
-    theme: Optional[str] = None      # famous|local|known|hidden|season
+    category: Optional[str] = Field(None, max_length=10)   # meal|cafe|bar|sight|walk|shop|rest
+    theme: Optional[str] = Field(None, max_length=10)      # famous|local|known|hidden|season
     month: Optional[int] = None      # season 일 때 달 (없으면 이번 달)
 
 
 def _limit(uid):
-    n = db.run('insert into usage_daily(user_id, day, chats) values (%s, current_date, 1) '
-               'on conflict (user_id, day) do update set chats = usage_daily.chats + 1 returning chats', uid)
-    if n > config.DAILY_CHAT_LIMIT:
+    """사용자별 하루 한도(넘으면 429). 반환: LLM 을 써도 되는지 (서비스 전체 하루 한도를 넘으면 규칙 파서로 — 비용 가드)."""
+    r = db.one('with u as (insert into usage_daily(user_id, day, chats) values (%s, current_date, 1) '
+               'on conflict (user_id, day) do update set chats = usage_daily.chats + 1 returning chats) '
+               'select (select chats from u) as mine, (select coalesce(sum(chats), 0) from usage_daily where day = current_date) as total', uid)
+    if r['mine'] > config.DAILY_CHAT_LIMIT:
         raise HTTPException(429, f'오늘은 {config.DAILY_CHAT_LIMIT}번까지 쓸 수 있어요')
+    return r['total'] < config.LLM_DAILY_LIMIT
 
 
 def _msg(uid, trip, role, text, payload=None, turn_id=None):
@@ -84,16 +87,16 @@ def _answer(uid, p, intent, reply, source, query, t0, llm_meta=None, outside=Fal
     return out
 
 
-@router.post('/chat')
+@router.post('/chat', dependencies=[Depends(security.BURST)])
 def chat(body: ChatIn, request: Request, uid: str = Depends(current_user)):
     t0 = time.time()
-    _limit(uid)
+    use_llm = _limit(uid)
     p = db.load_profile(uid, sv.pf.new_profile)
     trip = p['_trip']
     outside = not _loc(p, body)
     hist = [(m['role'], m['text']) for m in db.rows('select role, text from messages where trip_id = %s order by created_at desc limit 6', trip)][::-1]
     _msg(uid, trip, 'user', body.message)
-    t = llm.parse(body.message, hist)
+    t = llm.parse(body.message, hist, use_llm=use_llm)
     if t.get('location_query'):
         g = sv.geocode(t['location_query'], near=p['session']['current'])
         if g: sv.set_location(p, g['lat'], g['lon'], g['name'], src='search')
@@ -111,10 +114,10 @@ def chat(body: ChatIn, request: Request, uid: str = Depends(current_user)):
         intent['theme'] = t['theme']
         if t['theme'] == 'season':
             intent['month'] = t.get('month') if t.get('month') in range(1, 13) else sv.month()
-    return _answer(uid, p, intent, t['reply'], 'chat', body.message, t0, t.get('_meta'), outside, sv.country(request.client.host if request.client else None))
+    return _answer(uid, p, intent, t['reply'], 'chat', body.message, t0, t.get('_meta'), outside, sv.country(security.client_ip(request)))
 
 
-@router.post('/recommend')
+@router.post('/recommend', dependencies=[Depends(security.BURST)])
 def chip(body: ChipIn, request: Request, uid: str = Depends(current_user)):
     """칩(종류·테마)을 눌렀을 때 — LLM 없이 바로 추천."""
     t0 = time.time()
@@ -127,11 +130,11 @@ def chip(body: ChipIn, request: Request, uid: str = Depends(current_user)):
         intent['month'] = body.month if body.month in range(1, 13) else sv.month()
     label = sv.CAT_KO.get(body.category) or sv.THEME_KO.get(body.theme or '', '').format(m=intent.get('month') or sv.month())
     _msg(uid, p['_trip'], 'user', label)
-    return _answer(uid, p, intent, None, 'chip', label, t0, None, outside, sv.country(request.client.host if request.client else None))
+    return _answer(uid, p, intent, None, 'chip', label, t0, None, outside, sv.country(security.client_ip(request)))
 
 
 @router.post('/location')
-def location(body: Loc, query: Optional[str] = None, uid: str = Depends(current_user)):
+def location(body: Loc, query: Optional[str] = Query(None, max_length=100), uid: str = Depends(current_user)):
     p = db.load_profile(uid, sv.pf.new_profile)
     if query:
         g = sv.geocode(query, near=p['session']['current'])
@@ -162,7 +165,7 @@ def starts(uid: str = Depends(current_user)):
 
 
 @router.get('/geo/search')
-def geo_search(q: str, uid: str = Depends(current_user)):
+def geo_search(q: str = Query(max_length=100), uid: str = Depends(current_user)):
     """시작 위치 검색: 공항·역·장소 이름. 고르면 POST /api/location {lat, lon, name}."""
     return sv.geo_search(q)
 

@@ -5,15 +5,24 @@ server {
     gzip on;
     gzip_types text/css application/javascript application/json text/plain;
 
-    location = / { try_files /index.html =404; add_header Cache-Control "no-cache"; }
-    location = /robots.txt { alias /usr/share/nginx/html/static/robots.txt; }
-    location /static/ { add_header Cache-Control "no-cache"; }   # 매번 ETag 로 재검증 → 배포 직후 옛 JS 가 남지 않음
+    # 사용자 IP: Cloud Run 앞단이 X-Forwarded-For 맨 끝에 실제 접속 IP 를 붙인다 → 그 값만 씀 (앞쪽은 사용자가 꾸밀 수 있음)
+    set_real_ip_from 0.0.0.0/0;
+    set_real_ip_from ::/0;
+    real_ip_header X-Forwarded-For;
+    real_ip_recursive off;
+
+    location = / { try_files /index.html =404; add_header Cache-Control "no-cache"; include /etc/nginx/snippets/security_headers.conf; }
+    location = /robots.txt { alias /usr/share/nginx/html/static/robots.txt; include /etc/nginx/snippets/security_headers.conf; }
+    location /static/ { add_header Cache-Control "no-cache"; include /etc/nginx/snippets/security_headers.conf; }   # 매번 ETag 로 재검증 → 배포 직후 옛 JS 가 남지 않음
 
     # API·로그인·헬스체크 → api 서비스 (Cloud Run 은 Host 헤더로 서비스를 찾으므로 api 주소로 바꿔 보냄)
     location ~ ^/(api|auth|health)(/|$) {
+        include /etc/nginx/snippets/security_headers.conf;
         proxy_pass ${API_URL};
         proxy_set_header Host ${API_HOST};
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Proxy-Secret ${PROXY_SECRET};     # api 는 이 값이 맞는 요청만 받음 (server/app/security.py)
+        proxy_set_header X-Client-IP $remote_addr;           # 위 real_ip 로 정한 사용자 IP (국가 로그·요청 제한)
+        proxy_set_header X-Forwarded-For $remote_addr;
         proxy_set_header X-Forwarded-Proto https;
         proxy_ssl_server_name on;
         proxy_read_timeout 60s;

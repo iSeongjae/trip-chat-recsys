@@ -2,8 +2,8 @@
 FROM python:3.12-slim
 WORKDIR /app
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 APP_ENV=prod
-COPY server/requirements.txt server/requirements.txt
-RUN pip install --no-cache-dir -r server/requirements.txt
+COPY server/requirements.lock server/requirements.lock
+RUN pip install --no-cache-dir -r server/requirements.lock   # 버전 고정 목록 (빌드마다 같은 버전)
 COPY src src
 COPY rules rules
 COPY server/app server/app
@@ -14,4 +14,5 @@ COPY data/geoip/dbip-country-lite.mmdb data/geoip/dbip-country-lite.mmdb
 RUN useradd -u 10001 -M app && chown -R app /app
 USER app
 WORKDIR /app/server
-CMD exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8080} --proxy-headers --forwarded-allow-ips '*'
+# 사용자 IP 는 web(nginx)이 X-Client-IP 로 넘긴 값만 씀 (security.client_ip). X-Forwarded-For 는 믿지 않음
+CMD exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8080} --no-proxy-headers

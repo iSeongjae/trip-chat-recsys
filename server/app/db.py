@@ -84,8 +84,9 @@ def actor(uid):
     return str(r['actor']) if r else None
 
 
-def touch(uid):
-    return run('update users set last_seen_at = now() where id = %s returning id', uid) is not None
+def touch(uid, ver=0):
+    """마지막 이용 시각 갱신. 없는 사용자이거나 로그아웃으로 무효가 된 쿠키(session_ver 다름)면 False."""
+    return run('update users set last_seen_at = now() where id = %s and session_ver = %s returning id', uid, ver) is not None
 
 
 def delete_user(uid):

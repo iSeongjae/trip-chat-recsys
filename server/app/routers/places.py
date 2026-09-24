@@ -1,12 +1,15 @@
 """장소 상세·반응(가기/저장/여기 말고)·화면 이벤트. 반응 한 번마다 reaction_logs 한 줄 (직전 추천 turn_id·순위와 연결)."""
 import urllib.parse
 from typing import Optional
-from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel
+import json
+from typing import Annotated
+from fastapi import APIRouter, Depends, HTTPException, Query, Path
+from pydantic import BaseModel, Field, field_validator
 from .. import db, service as sv
 from ..auth import current_user
 
 router = APIRouter(prefix='/api')
+PlaceId = Annotated[str, Path(max_length=100)]
 UI_EVENTS = {'map_open', 'pin_click', 'directions_open', 'share', 'wiki_open'}   # 프론트가 보내는 반응
 
 
@@ -22,7 +25,7 @@ def _rank(p, item_id):
 
 
 @router.get('/places/search')
-def search(q: str, uid: str = Depends(current_user)):
+def search(q: str = Query(max_length=100), uid: str = Depends(current_user)):
     k = sv.norm(q)
     if len(k) < 2: return []
     cur = db.load_profile(uid, sv.pf.new_profile)['session']['current']
@@ -32,7 +35,7 @@ def search(q: str, uid: str = Depends(current_user)):
 
 
 @router.get('/places/{item_id}')
-def detail(item_id: str, lat: float = None, lon: float = None, uid: str = Depends(current_user)):
+def detail(item_id: PlaceId, lat: float = None, lon: float = None, uid: str = Depends(current_user)):
     """lat/lon: 브라우저의 현재 위치(저장하지 않음, 거리 계산에만). 없으면 저장된 위치."""
     it = _item(item_id)
     p = db.load_profile(uid, sv.pf.new_profile)
@@ -54,11 +57,11 @@ def detail(item_id: str, lat: float = None, lon: float = None, uid: str = Depend
 
 
 class FeedbackIn(BaseModel):
-    event: str   # select | save | unsave | skip
+    event: str = Field(max_length=10)   # select | save | unsave | skip
 
 
 @router.post('/places/{item_id}/feedback')
-def feedback(item_id: str, body: FeedbackIn, uid: str = Depends(current_user)):
+def feedback(item_id: PlaceId, body: FeedbackIn, uid: str = Depends(current_user)):
     it = _item(item_id)
     p = db.load_profile(uid, sv.pf.new_profile)
     trip, turn, rank = p['_trip'], p['session'].get('last_turn'), _rank(p, item_id)
@@ -86,9 +89,16 @@ def feedback(item_id: str, body: FeedbackIn, uid: str = Depends(current_user)):
 
 
 class LogIn(BaseModel):
-    type: str
-    place_id: Optional[str] = None
+    type: str = Field(max_length=30)
+    place_id: Optional[str] = Field(None, max_length=100)
     props: Optional[dict] = None
+
+    @field_validator('props')
+    @classmethod
+    def small(cls, v):
+        if v is not None and len(json.dumps(v)) > 1000:
+            raise ValueError('props 는 1000자까지')
+        return v
 
 
 @router.post('/log')

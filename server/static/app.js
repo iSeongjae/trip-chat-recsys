@@ -115,7 +115,7 @@ function bubble(m) {
       <div><h3 class="font-head text-[18px]">${esc(m.summary || '')}</h3>${(m.notes || []).filter(n => n.includes('넓혔')).map(n => `<p class="text-[12px] text-slate-500 mt-1">${esc(n)}</p>`).join('')}</div>
       ${m.cards.length ? `<button onclick='openMap(${JSON.stringify(m.cards).replace(/'/g, "&#39;")})' class="flex items-center gap-1 text-coral text-[13px] font-bold bg-coralbg px-3.5 py-1.5 rounded-full border border-[#f5d5cf] shrink-0">지도에서 볼래요<span class="material-symbols-outlined text-[18px]">arrow_forward</span></button>` : ''}</div>
       <div class="flex gap-2 overflow-x-auto pb-1 -mx-5 px-5">${m.cards.map(c => `
-        <div onclick="location.hash='#/place/${encodeURIComponent(c.id)}'" class="w-44 shrink-0 rounded-2xl px-3.5 py-3 bg-white shadow-sm border border-slate-100 cursor-pointer active:scale-[.98] transition">
+        <div data-place="${esc(c.id)}" class="w-44 shrink-0 rounded-2xl px-3.5 py-3 bg-white shadow-sm border border-slate-100 cursor-pointer active:scale-[.98] transition">
           ${c.tags && c.tags.length ? `<span class="text-[11px] px-2 py-0.5 rounded-full font-bold bg-coralbg text-coral">${esc(c.tags[0])}</span>` : ''}
           <h4 class="font-head text-[17px] truncate mt-1">${esc(c.name)}</h4>
           ${c.name_ja ? `<p class="text-[11px] text-slate-400 truncate">${esc(c.name_ja)}</p>` : ''}
@@ -137,7 +137,7 @@ async function viewChat() {
       <div class="flex items-center gap-1.5 overflow-x-auto pb-2 -mx-5 px-5">
         ${S.seasonMonths.map(m => chipBtn(`${m}월 명소`, `chip(null,'season',${m})`)).join('')}${THEMES.map(([k, l]) => chipBtn(l, `chip(null,'${k}')`)).join('')}${CATS.map(([k, l]) => chipBtn(l, `chip('${k}',null)`)).join('')}</div>
       <form id="f" class="flex items-center gap-2">
-        <input id="q" autocomplete="off" class="flex-1 bg-white shadow-sm border border-slate-200 rounded-full px-5 py-3 focus:outline-none" placeholder="먹고 싶은 걸 말해 주세요">
+        <input id="q" autocomplete="off" maxlength="300" class="flex-1 bg-white shadow-sm border border-slate-200 rounded-full px-5 py-3 focus:outline-none" placeholder="먹고 싶은 걸 말해 주세요">
         <button class="w-11 h-11 rounded-full flex items-center justify-center bg-leaf text-white shrink-0"><span class="material-symbols-outlined">arrow_upward</span></button>
       </form></div></div>` + nav('chat');
   const msgs = await api('/api/messages');
@@ -200,7 +200,7 @@ async function openStartSheet() {
       <div class="w-9 h-1 rounded-full bg-slate-200 mx-auto mb-4"></div>
       <h2 class="font-head text-[22px]">어디에서 여행을 시작할 거예요?</h2>
       <p class="text-[13px] text-slate-500 mt-1">도착하는 공항을 고르거나, 역·장소 이름으로 찾아보세요</p>
-      <input id="ss" autocomplete="off" placeholder="예: 교토역, 난바, 삿포로" class="w-full mt-4 bg-canvas border border-slate-200 rounded-full px-5 py-3 focus:outline-none">
+      <input id="ss" autocomplete="off" maxlength="100" placeholder="예: 교토역, 난바, 삿포로" class="w-full mt-4 bg-canvas border border-slate-200 rounded-full px-5 py-3 focus:outline-none">
       ${navigator.geolocation ? `<button id="gps" class="mt-3 flex items-center gap-2 text-[14px] text-leaf px-2"><span class="material-symbols-outlined fill text-[20px]">my_location</span>지금 위치 사용 (일본에 있을 때)</button>` : ''}
       <p id="sslabel" class="text-[12px] text-slate-400 mt-4 mb-1 px-2">주요 공항</p>
       <div id="sslist" class="overflow-y-auto -mx-2 px-2 flex-1"></div>
@@ -252,7 +252,7 @@ function viewMap() {
   function select(i) {
     pins.forEach((p, j) => p.classList.toggle('on', i === j));
     const c = cards[i];
-    $('#sheet').innerHTML = `<div onclick="location.hash='#/place/${encodeURIComponent(c.id)}'" class="bg-white rounded-3xl shadow-lg p-5 cursor-pointer">
+    $('#sheet').innerHTML = `<div data-place="${esc(c.id)}" class="bg-white rounded-3xl shadow-lg p-5 cursor-pointer">
       <div class="flex items-center gap-2 text-[13px] text-slate-500"><span class="bg-leafbg px-2.5 py-0.5 rounded-full text-leaf">${dist(c.distance_m)}</span>${esc(c.kind)}${c.tags.length ? ' · ' + esc(c.tags.join(' · ')) : ''}</div>
       <h3 class="font-head text-[22px] mt-1.5">${esc(c.name)}</h3>${c.name_ja ? `<p class="text-[12px] text-slate-400">${esc(c.name_ja)}</p>` : ''}
       <p class="text-[13px] text-slate-500 mt-1">눌러서 자세히 보기</p></div>`;
@@ -262,7 +262,8 @@ function viewMap() {
 
 // ---------- 장소 카드 ----------
 async function viewPlace(id) {
-  const q = S.loc && S.mode === 'gps' ? `?lat=${S.loc.lat}&lon=${S.loc.lon}` : '';
+  // 거리 계산용 현재 위치는 소수 2자리(약 1km)로만 보냄: 주소창 값은 서버 접속 로그에 남으므로 정확한 좌표를 넣지 않음
+  const q = S.loc && S.mode === 'gps' ? `?lat=${S.loc.lat.toFixed(2)}&lon=${S.loc.lon.toFixed(2)}` : '';
   const p = await api(`/api/places/${encodeURIComponent(id)}${q}`);
   app.innerHTML = header(`<button onclick="sharePlace()" class="w-9 h-9 flex items-center justify-center text-slate-600"><span class="material-symbols-outlined">share</span></button>`) + `
   <div class="relative h-[38vh]"><div id="map" class="absolute inset-0"></div>
@@ -275,7 +276,7 @@ async function viewPlace(id) {
     <div class="flex flex-wrap gap-1.5 mt-3">${p.distance_m != null && p.distance_m < 500 ? `<span class="bg-leafbg text-leaf text-[13px] px-3 py-1 rounded-full">🚶 가까움</span>` : ''}
       ${p.tags.map(t => `<span class="bg-coralbg text-coral text-[13px] px-3 py-1 rounded-full">${esc(t)}</span>`).join('')}${p.visited ? `<span class="bg-slate-100 text-slate-500 text-[13px] px-3 py-1 rounded-full">방문함</span>` : ''}</div>
     ${p.description ? `<div class="mt-4 bg-canvas rounded-2xl p-4">${esc(p.description)}</div>
-      <div class="flex justify-between text-[12px] text-slate-500 mt-2"><span>출처: ${esc(p.description_source)}</span>${p.wiki_url ? `<a class="underline" target="_blank" rel="noopener" onclick="logUi('wiki_open','${esc(id)}')" href="${esc(p.wiki_url)}">위키백과 ↗</a>` : ''}</div>` : ''}
+      <div class="flex justify-between text-[12px] text-slate-500 mt-2"><span>출처: ${esc(p.description_source)}</span>${p.wiki_url ? `<a class="underline" target="_blank" rel="noopener" data-log="wiki_open" data-id="${esc(id)}" href="${esc(p.wiki_url)}">위키백과 ↗</a>` : ''}</div>` : ''}
     <p class="text-[11px] text-slate-400 mt-4">데이터: ${esc(p.sources.join(' · '))} · 정보는 실제와 다를 수 있어요</p>
     <button id="go" class="w-full mt-6 bg-leaf text-white rounded-full py-4 font-head text-[18px] flex items-center justify-center gap-2 ${p.visited ? 'opacity-50' : ''}"><span class="material-symbols-outlined">near_me</span>여기로 갈까요?</button>
     <div class="flex justify-center gap-10 mt-4 text-slate-600">
@@ -310,10 +311,10 @@ async function viewSaved(tab = 'visited', filter = '') {
   <main class="px-5 pt-4 pb-28">
     <div class="flex bg-leafbg rounded-full p-1">${[['visited', '내가 간 곳'], ['saved', '가고 싶은 곳']].map(([k, l]) => `
       <button onclick="viewSaved('${k}')" class="flex-1 rounded-full py-2.5 font-head ${tab === k ? 'bg-leaf text-white' : 'text-slate-500'}">${l} <span class="text-[12px] opacity-80">${L[k].length}</span></button>`).join('')}</div>
-    <input id="sf" value="${esc(filter)}" placeholder="식당, 카페, 명소 검색…" class="w-full mt-4 bg-white border border-slate-200 rounded-full px-5 py-3 focus:outline-none">
+    <input id="sf" maxlength="100" value="${esc(filter)}" placeholder="식당, 카페, 명소 검색…" class="w-full mt-4 bg-white border border-slate-200 rounded-full px-5 py-3 focus:outline-none">
     ${tab === 'visited' && rated.length ? `<div class="mt-4 bg-leafbg/60 rounded-2xl px-4 py-3 text-[14px]">방문 ${L.visited.length}곳 (평균 ★ ${(rated.reduce((a, x) => a + x.rating, 0) / rated.length).toFixed(1)})</div>` : ''}
     <div class="flex flex-col gap-3 mt-4">${list.length ? list.map(x => `
-      <div ${x.id ? `onclick="location.hash='#/place/${encodeURIComponent(x.id)}'"` : ''} class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 cursor-pointer">
+      <div ${x.id ? `data-place="${esc(x.id)}"` : ''} class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 cursor-pointer">
         <div class="flex items-center gap-2"><h3 class="font-head text-[18px] truncate">${esc(x.name)}</h3>
           ${tab === 'visited' ? `<span class="text-[11px] px-2 py-0.5 rounded-full ${x.footprint ? 'bg-leafbg text-leaf' : 'bg-slate-100 text-slate-500'}">${x.footprint ? '발자국' : '방문완료'}</span>` : ''}</div>
         <p class="text-[13px] text-slate-500 mt-1">${esc(x.kind)}${x.visited_at ? ' · ' + new Date(x.visited_at * 1000).toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) + (x.trip_day ? ` · ${x.trip_day}일차` : '') : ''}</p>
@@ -367,4 +368,11 @@ async function route() {
   } catch (e) { if (e.message !== 'login') toast(e.message); }
 }
 window.addEventListener('hashchange', () => { window.scrollTo(0, 0); route(); });
+// 장소 카드·목록 클릭 (id 를 onclick 문자열에 넣지 않고 data 속성으로: 따옴표가 든 값이 스크립트가 되지 않게)
+document.addEventListener('click', e => {
+  const log = e.target.closest('[data-log]');
+  if (log) logUi(log.dataset.log, log.dataset.id);
+  const pl = e.target.closest('[data-place]');
+  if (pl) location.hash = '#/place/' + encodeURIComponent(pl.dataset.place);
+});
 route();

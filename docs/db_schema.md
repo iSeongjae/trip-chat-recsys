@@ -1,6 +1,6 @@
 # DB (Supabase / Postgres 17, 도쿄 ap-northeast-1) — 2026-09-24
 
-- 스키마: `supabase/migrations/20260924000000_init.sql` — **적용 완료** (`python3 scripts/db/migrate.py`, 기록은 `_migrations`)
+- 스키마: `supabase/migrations/20260924000000_init.sql` + 이후 파일들 (`20260926000000_session_ver.sql`: `users.session_ver` — 로그아웃 시 올려 예전 쿠키 무효) — **적용 완료** (`python3 scripts/db/migrate.py`, 기록은 `_migrations`)
 - 접속: `.env` 의 `SUPABASE_DB_{HOST,PORT,NAME,USER,PASSWORD}` (Session pooler, IPv4). Data API(PostgREST)는 꺼져 있고 모든 테이블 RLS 켬·정책 없음
 - 무료 플랜 NANO: max_connections 60, shared_buffers 224MB, DB 500MB. 장소 37만 곳은 DB 에 넣지 않고 서버 파일로 둔다
 

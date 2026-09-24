@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
-from . import config, db, service
+from . import config, db, service, security
 from .auth import router as auth_router
 from .routers import chat, places, me
 
@@ -40,6 +40,7 @@ async def lifespan(app):
 
 
 app = FastAPI(title='이제 뭐 하지?', lifespan=lifespan)
+app.middleware('http')(security.guard)
 app.add_middleware(SessionMiddleware, secret_key=config.SESSION_SECRET, https_only=config.BASE_URL.startswith('https'))  # Google OAuth state 용
 for r in (auth_router, chat.router, places.router, me.router):
     app.include_router(r)

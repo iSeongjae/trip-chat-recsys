@@ -1,7 +1,8 @@
 """저장목록: 내가 간 곳(방문·직접 등록) / 가고 싶은 곳(저장), 별점·메모."""
 from typing import Optional
+from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from .. import db, service as sv
 from ..auth import current_user
 
@@ -31,11 +32,11 @@ def lists(uid: str = Depends(current_user)):
 
 class VisitPatch(BaseModel):
     rating: Optional[float] = None
-    memo: Optional[str] = None
+    memo: Optional[str] = Field(None, max_length=500)
 
 
 @router.patch('/visits/{visit_id}')
-def patch_visit(visit_id: str, body: VisitPatch, uid: str = Depends(current_user)):
+def patch_visit(visit_id: UUID, body: VisitPatch, uid: str = Depends(current_user)):
     v = db.one('select place_id, turn_id, trip_id from visits where id = %s and user_id = %s', visit_id, uid)
     if not v: raise HTTPException(404)
     if body.rating is not None:
@@ -43,28 +44,28 @@ def patch_visit(visit_id: str, body: VisitPatch, uid: str = Depends(current_user
         db.run('update visits set rating = %s where id = %s', body.rating, visit_id)
         db.log_reaction(uid, v['trip_id'], 'rate', place_id=v['place_id'], turn_id=v['turn_id'], props={'rating': body.rating})
     if body.memo is not None:
-        db.run('update visits set memo = %s where id = %s', body.memo[:500], visit_id)
+        db.run('update visits set memo = %s where id = %s', body.memo, visit_id)
     return {'ok': True}
 
 
 @router.delete('/visits/{visit_id}')
-def delete_visit(visit_id: str, uid: str = Depends(current_user)):
+def delete_visit(visit_id: UUID, uid: str = Depends(current_user)):
     db.run('delete from visits where id = %s and user_id = %s', visit_id, uid)
     return {'ok': True}
 
 
 class SpotIn(BaseModel):
-    name: str
-    lat: float
-    lon: float
-    memo: Optional[str] = None
+    name: str = Field(min_length=1, max_length=100)
+    lat: float = Field(ge=-90, le=90)
+    lon: float = Field(ge=-180, le=180)
+    memo: Optional[str] = Field(None, max_length=500)
 
 
 @router.post('/spots')
 def add_spot(body: SpotIn, uid: str = Depends(current_user)):
     """직접 등록(발자국): 사용자가 만든 장소. 추천 DB 에는 넣지 않는다."""
     sid = db.run('insert into spots(user_id, name, lat, lon, memo) values (%s, %s, %s, %s, %s) returning id',
-                 uid, body.name[:100], body.lat, body.lon, body.memo)
+                 uid, body.name, body.lat, body.lon, body.memo)
     vid = db.run('insert into visits(user_id, trip_id, spot_id, source, memo) values (%s, %s, %s, %s, %s) returning id',
                  uid, db.current_trip(uid), sid, 'manual', body.memo)
     return {'ok': True, 'visit_id': str(vid)}
