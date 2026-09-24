@@ -1,0 +1,1250 @@
+[
+ {
+  "category": "teishoku_don",
+  "name": "吉野家",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "すき家",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "松屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "なか卯",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "大戸屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "やよい軒",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "宮本むなし",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "ほっともっと",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "ほっかほっか亭",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "オリジン弁当",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "本家かまどや",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "かまどや",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "キッチンオリジン",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "teishoku_don",
+  "name": "街かど屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "curry",
+  "name": "CoCo壱番屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "curry",
+  "name": "ココイチ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "curry",
+  "name": "ゴーゴーカレー",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "マクドナルド",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "モスバーガー",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "ケンタッキー",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "バーガーキング",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "ロッテリア",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "フレッシュネスバーガー",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "ウェンディーズ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "ファーストキッチン",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "サブウェイ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "SUBWAY",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "McDonald",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "KFC",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "ドムドム",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "ラッキーピエロ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "ケンタッキーフライドチキン",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "fastfood",
+  "name": "ゼッテリア",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "スターバックス",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "Starbucks",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "ドトール",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "タリーズ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "Tully",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "コメダ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "サンマルク",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "エクセルシオール",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "ベローチェ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "星乃珈琲",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "カフェ・ド・クリエ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "プロント",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "ルノアール",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "上島珈琲",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "ブルーボトル",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "Blue Bottle",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "PRONTO",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "cafe",
+  "name": "貢茶",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sweets",
+  "name": "ミスタードーナツ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sweets",
+  "name": "ミスド",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sweets",
+  "name": "サーティワン",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sweets",
+  "name": "コールド・ストーン",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sweets",
+  "name": "クリスピー・クリーム",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "サイゼリヤ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ピザハット",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ドミノ・ピザ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ピザーラ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ナポリの窯",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ジョリーパスタ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "鎌倉パスタ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ガスト",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ココス",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ジョイフル",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "デニーズ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ジョナサン",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ロイヤルホスト",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "カプリチョーザ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "洋麺屋五右衛門",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "五右衛門",
+  "start_only": "1",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "オリーブの丘",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ポポラマーマ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "western",
+  "name": "ドミノ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "丸亀製麺",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "はなまるうどん",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "富士そば",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "ゆで太郎",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "小諸そば",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "箱根そば",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "資さんうどん",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "ウエスト",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "増田屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "サガミ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "味の民芸",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "更科",
+  "start_only": "1",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "udon_soba",
+  "name": "長寿庵",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "一蘭",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "一風堂",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "天下一品",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "幸楽苑",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "日高屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "スガキヤ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "来来亭",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "魁力屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "横浜家系",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "山岡家",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "花月嵐",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "一幸舎",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "博多一双",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "町田商店",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "大勝軒",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "壱角家",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "麺場",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "ramen",
+  "name": "田所商店",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "chinese",
+  "name": "リンガーハット",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "chinese",
+  "name": "餃子の王将",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "chinese",
+  "name": "大阪王将",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "chinese",
+  "name": "バーミヤン",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "chinese",
+  "name": "ぎょうざの満洲",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "chinese",
+  "name": "餃子の満洲",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "chinese",
+  "name": "五味八珍",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "chinese",
+  "name": "珍来",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "スシロー",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "くら寿司",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "はま寿司",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "かっぱ寿司",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "魚べい",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "元気寿司",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "銚子丸",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "や台ずし",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "銀のさら",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "小僧寿し",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "sushi",
+  "name": "にぎり長次郎",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "korean",
+  "name": "韓丼",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "牛角",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "焼肉きんぐ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "安楽亭",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "叙々苑",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "焼肉ライク",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "あみやき亭",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "牛繁",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "ワンカルビ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "じゅうじゅうカルビ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "すたみな太郎",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakiniku",
+  "name": "安安",
+  "start_only": "1",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakitori",
+  "name": "鳥貴族",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakitori",
+  "name": "鳥メロ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakitori",
+  "name": "秋吉",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakitori",
+  "name": "串鳥",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakitori",
+  "name": "備長扇屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakitori",
+  "name": "やきとり扇屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakitori",
+  "name": "大吉",
+  "start_only": "1",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakitori",
+  "name": "やきとり大吉",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "yakitori",
+  "name": "てけてけ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "磯丸水産",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "白木屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "魚民",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "笑笑",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "和民",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "わたみ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "千年の宴",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "目利きの銀次",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "庄や",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "日本海庄や",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "はなの舞",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "天狗",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "塚田農場",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "世界の山ちゃん",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "串カツ田中",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "八剣伝",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "養老乃瀧",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "つぼ八",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "山内農場",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "村さ来",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "ミライザカ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "さかなや道場",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "izakaya",
+  "name": "土間土間",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "katsu_tempura",
+  "name": "かつや",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "katsu_tempura",
+  "name": "とんかつ和幸",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "katsu_tempura",
+  "name": "さぼてん",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "katsu_tempura",
+  "name": "天丼てんや",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "katsu_tempura",
+  "name": "てんや",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "katsu_tempura",
+  "name": "松のや",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "katsu_tempura",
+  "name": "からやま",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "katsu_tempura",
+  "name": "から好し",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "katsu_tempura",
+  "name": "かつさと",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "okonomi",
+  "name": "築地銀だこ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "okonomi",
+  "name": "銀だこ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "okonomi",
+  "name": "千房",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "okonomi",
+  "name": "道とん堀",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "okonomi",
+  "name": "あほや",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "びっくりドンキー",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "いきなり!ステーキ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "いきなりステーキ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "ステーキガスト",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "ブロンコビリー",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "ステーキけん",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "ビッグボーイ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "フライングガーデン",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "ペッパーランチ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "steak_hamburg",
+  "name": "Pepper Lunch",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "jp_other",
+  "name": "夢庵",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "jp_other",
+  "name": "とんでん",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "jp_other",
+  "name": "かごの屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "jp_other",
+  "name": "まるまつ",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "jp_other",
+  "name": "藍屋",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "jp_other",
+  "name": "華屋与兵衛",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "jp_other",
+  "name": "ばんどう太郎",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "jp_other",
+  "name": "いっちょう",
+  "start_only": "1",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "jp_other",
+  "name": "かに道楽",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "nabe",
+  "name": "しゃぶ葉",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "nabe",
+  "name": "木曽路",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "nabe",
+  "name": "赤から",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "nabe",
+  "name": "ゆず庵",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "nabe",
+  "name": "温野菜",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ },
+ {
+  "category": "kaiseki",
+  "name": "梅の花",
+  "start_only": "0",
+  "source": "Claude knowledge 2026-09-24"
+ }
+]

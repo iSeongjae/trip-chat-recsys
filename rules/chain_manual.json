@@ -1,0 +1,262 @@
+[
+ {
+  "qid": "Q11417251",
+  "category": "katsu_tempura",
+  "source": "Claude knowledge 2026-09-24 (和幸, とんかつ)"
+ },
+ {
+  "qid": "Q11567129",
+  "category": "steak_hamburg",
+  "source": "Claude knowledge 2026-09-24 (炭焼きレストランさわやか, ハンバーグ)"
+ },
+ {
+  "qid": "Q11326653",
+  "category": "bar",
+  "source": "Claude knowledge 2026-09-24 (Hub, 英国風パブ)"
+ },
+ {
+  "qid": "Q11341129",
+  "category": "sushi",
+  "source": "Claude knowledge 2026-09-24 (回転寿司 海都)"
+ },
+ {
+  "qid": "Q11374503",
+  "category": "sushi",
+  "source": "Claude knowledge 2026-09-24 (京樽)"
+ },
+ {
+  "qid": "Q699142",
+  "category": "chinese",
+  "source": "Claude knowledge 2026-09-24 (鼎泰豊)"
+ },
+ {
+  "qid": "Q104840749",
+  "category": "jp_other",
+  "source": "Claude knowledge 2026-09-24 (Nobu, 和食フュージョン)"
+ },
+ {
+  "qid": "Q11337031",
+  "category": "western",
+  "source": "Claude knowledge 2026-09-24 (ベビーフェイスプラネッツ, 洋食ファミレス)"
+ },
+ {
+  "qid": "Q2213883",
+  "category": "steak_hamburg",
+  "source": "Claude knowledge 2026-09-24 (Tony Roma's, リブ)"
+ },
+ {
+  "qid": "Q5976467",
+  "category": "chinese",
+  "source": "Claude knowledge 2026-09-24 (小肥羊, 中国火鍋)"
+ },
+ {
+  "qid": "Q134850053",
+  "category": "udon_soba",
+  "source": "web search https://www.kyubeiya.jp/ (久兵衛屋, 武蔵野うどん)"
+ },
+ {
+  "qid": "Q126369578",
+  "category": "nabe",
+  "source": "Claude knowledge 2026-09-24 (Mo-Mo Paradise, しゃぶしゃぶ)"
+ },
+ {
+  "qid": "Q11668078",
+  "category": "western",
+  "source": "Claude knowledge 2026-09-24 (馬車道, 洋食ファミレス)"
+ },
+ {
+  "qid": "Q11333981",
+  "category": "yakiniku",
+  "source": "web search https://griglia.fresca-co.jp/store/ (ぐりぐり家, 焼肉)"
+ },
+ {
+  "qid": "Q22130167",
+  "category": "sweets",
+  "source": "Claude knowledge 2026-09-24 (日本一たい焼)"
+ },
+ {
+  "qid": "Q931084",
+  "category": "sweets",
+  "source": "Claude knowledge 2026-09-24 (Godiva)"
+ },
+ {
+  "qid": "Q11577966",
+  "category": "jp_other",
+  "source": "Claude knowledge 2026-09-24 (甲羅本店, かに料理)"
+ },
+ {
+  "qid": "Q28682444",
+  "category": "katsu_tempura",
+  "source": "Claude knowledge 2026-09-24 (京都勝牛, 牛カツ)"
+ },
+ {
+  "qid": "Q11480948",
+  "category": "ramen",
+  "source": "Claude knowledge 2026-09-24 (希望軒)"
+ },
+ {
+  "qid": "Q8069229",
+  "category": "katsu_tempura",
+  "source": "Claude knowledge 2026-09-24 (かつ庵, ゼンショー)"
+ },
+ {
+  "qid": "Q11658966",
+  "category": "chinese",
+  "source": "Claude knowledge 2026-09-24 (梅梅, 中華)"
+ },
+ {
+  "qid": "Q11271705",
+  "category": "udon_soba",
+  "source": "Claude knowledge 2026-09-24 (ちから, 広島のうどん・そば)"
+ },
+ {
+  "qid": "Q22123868",
+  "category": "yakiniku",
+  "source": "Claude knowledge 2026-09-24 (大同門)"
+ },
+ {
+  "qid": "Q11455499",
+  "category": "udon_soba",
+  "source": "Claude knowledge 2026-09-24 (家族亭, そば・うどん)"
+ },
+ {
+  "qid": "Q11666092",
+  "category": "yakiniku",
+  "source": "Claude knowledge 2026-09-24 (食道園)"
+ },
+ {
+  "qid": "Q11515095",
+  "category": "curry",
+  "source": "Claude knowledge 2026-09-24 (サンマルコ, カレー)"
+ },
+ {
+  "qid": "Q11621607",
+  "category": "chinese",
+  "source": "Claude knowledge 2026-09-24 (551蓬莱)"
+ },
+ {
+  "qid": "Q55533098",
+  "category": "steak_hamburg",
+  "source": "Claude knowledge 2026-09-24 (三田屋本店, ステーキ・ハム)"
+ },
+ {
+  "qid": "Q123242512",
+  "category": "western",
+  "source": "Claude knowledge 2026-09-24 (不二家レストラン)"
+ },
+ {
+  "qid": "Q11314005",
+  "category": "other",
+  "source": "Claude knowledge 2026-09-24 (Soup Stock Tokyo, スープ専門)"
+ },
+ {
+  "qid": "Q10865579",
+  "category": "chinese",
+  "source": "Claude knowledge 2026-09-24 (三商巧福, 台湾牛肉麺)"
+ },
+ {
+  "qid": "Q17074715",
+  "category": "asian",
+  "source": "Claude knowledge 2026-09-24 (Moti Mahal, インド料理)"
+ },
+ {
+  "qid": "Q97169528",
+  "category": "ramen",
+  "source": "Claude knowledge 2026-09-24 (辛麺屋 桝元)"
+ },
+ {
+  "qid": "Q11668579",
+  "category": "yakitori",
+  "source": "Claude knowledge 2026-09-24 (骨付鳥 一鶴)"
+ },
+ {
+  "qid": "Q92662226",
+  "category": "chinese",
+  "source": "Claude knowledge 2026-09-24 (れんげ食堂Toshu 中華チェーン; 다수결 teishoku_don 은 '食堂' 때문)"
+ },
+ {
+  "qid": "Q918151",
+  "category": "western",
+  "source": "Claude knowledge 2026-09-24 (Hard Rock Cafe アメリカンレストラン; 다수결 cafe 는 'Cafe' 때문)"
+ },
+ {
+  "qid": "Q7382829",
+  "category": "steak_hamburg",
+  "source": "Claude knowledge 2026-09-24 (Ruth's Chris Steak House)"
+ },
+ {
+  "qid": "Q1066777",
+  "category": "fastfood",
+  "source": "Claude knowledge 2026-09-24 (Charleys Philly Steaks)"
+ },
+ {
+  "qid": "Q3370417",
+  "category": "bakery",
+  "source": "Claude knowledge 2026-09-24 (Paul)"
+ },
+ {
+  "qid": "Q1136423",
+  "category": "teishoku_don",
+  "source": "Claude knowledge 2026-09-24 (OSM 의 잘못된 QID, brand=なか卯)"
+ },
+ {
+  "qid": "Q206531",
+  "category": "western",
+  "source": "Claude knowledge 2026-09-24 (OSM 의 잘못된 QID, brand=Domino's)"
+ },
+ {
+  "qid": "Q1074431",
+  "category": "western",
+  "source": "Claude knowledge 2026-09-24 (OSM 의 잘못된 QID, brand=Chili's)"
+ },
+ {
+  "qid": "Q7137920",
+  "category": "chinese",
+  "source": "Claude knowledge 2026-09-24 (OSM 의 잘못된 QID, brand=Panda Express)"
+ },
+ {
+  "qid": "Q1189695",
+  "category": "western",
+  "source": "Claude knowledge 2026-09-24 (Denny's)"
+ },
+ {
+  "qid": "Q1072948",
+  "category": "western",
+  "source": "Claude knowledge 2026-09-24 (Chili's)"
+ },
+ {
+  "qid": "Q5017235",
+  "category": "cafe",
+  "source": "Claude knowledge 2026-09-24 (Cafe Coffee Day)"
+ },
+ {
+  "qid": "Q2666365",
+  "category": "cafe",
+  "source": "Claude knowledge 2026-09-24 (Gloria Jean's)"
+ },
+ {
+  "qid": "Q3029195",
+  "category": "sweets",
+  "source": "Claude knowledge 2026-09-24 (Dippin' Dots)"
+ },
+ {
+  "qid": "Q7755384",
+  "category": "sweets",
+  "source": "Claude knowledge 2026-09-24 (The Original Pancake House)"
+ },
+ {
+  "qid": "Q134308361",
+  "category": "ramen",
+  "source": "Claude knowledge 2026-09-24 (元祖油堂 油そば: 油そば=ramen)"
+ },
+ {
+  "qid": "Q847743",
+  "category": "sweets",
+  "source": "Claude knowledge 2026-09-24 (Dunkin')"
+ },
+ {
+  "qid": "Q4699761",
+  "category": "ramen",
+  "source": "Claude knowledge 2026-09-24 (味千ラーメン)"
+ }
+]

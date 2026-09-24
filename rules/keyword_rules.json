@@ -1,0 +1,152 @@
+[
+ {
+  "priority": "1",
+  "category": "ramen",
+  "pattern": "ラーメン|らーめん|らあめん|拉麺|中華そば|中華蕎麦|つけ麺|つけめん|油そば|まぜそば|担々麺|担担麺|家系|ラーメン二郎|二郎系|ramen",
+  "note": ""
+ },
+ {
+  "priority": "2",
+  "category": "chinese",
+  "pattern": "ちゃんぽん|チャンポン|皿うどん",
+  "note": ""
+ },
+ {
+  "priority": "3",
+  "category": "udon_soba",
+  "pattern": "うどん|饂飩|(?<!焼き)(?<!焼)そば|(?<!焼き)蕎麦|手打ち|udon|soba",
+  "note": ""
+ },
+ {
+  "priority": "4",
+  "category": "sushi",
+  "pattern": "寿司|寿し|鮨|すし|ずし(?![ぁ-んァ-ヶ])|鮓|sushi",
+  "note": ""
+ },
+ {
+  "priority": "5",
+  "category": "yakitori",
+  "pattern": "焼き鳥|焼鳥|やきとり|ヤキトリ|串焼|yakitori",
+  "note": ""
+ },
+ {
+  "priority": "6",
+  "category": "katsu_tempura",
+  "pattern": "とんかつ|豚カツ|トンカツ|かつ丼|カツ丼|天ぷら|天麩羅|天丼|串カツ|串かつ|串揚|唐揚|からあげ|tonkatsu|tempura",
+  "note": ""
+ },
+ {
+  "priority": "7",
+  "category": "okonomi",
+  "pattern": "お好み焼|お好み|もんじゃ|たこ焼|たこやき|鉄板焼|okonomiyaki|takoyaki",
+  "note": ""
+ },
+ {
+  "priority": "8",
+  "category": "yakiniku",
+  "pattern": "焼肉|焼き肉|やきにく|ホルモン|ジンギスカン|yakiniku",
+  "note": ""
+ },
+ {
+  "priority": "9",
+  "category": "nabe",
+  "pattern": "しゃぶしゃぶ|すき焼|すきやき|もつ鍋|水炊|水たき|鍋|おでん|shabu",
+  "note": ""
+ },
+ {
+  "priority": "10",
+  "category": "kaiseki",
+  "pattern": "懐石|会席|割烹|料亭",
+  "note": ""
+ },
+ {
+  "priority": "11",
+  "category": "steak_hamburg",
+  "pattern": "ステーキ|ハンバーグ|steak",
+  "note": ""
+ },
+ {
+  "priority": "12",
+  "category": "korean",
+  "pattern": "韓国|韓式|サムギョプサル|冷麺|チゲ|ビビンバ|タッカルビ|korean",
+  "note": ""
+ },
+ {
+  "priority": "13",
+  "category": "asian",
+  "pattern": "インドカレー|ネパールカレー|スリランカカレー|タイ料理|タイ国|ベトナム|(?<![ァ-ヶ])インド(?!ラ)|ネパール|スリランカ|ガパオ|ビリヤニ|thai|indian|nepal|vietnam",
+  "note": ""
+ },
+ {
+  "priority": "14",
+  "category": "curry",
+  "pattern": "カレー|カリー|curry",
+  "note": ""
+ },
+ {
+  "priority": "15",
+  "category": "foreign_other",
+  "pattern": "メキシカン|メキシコ|タコス|トルコ|ケバブ|スペイン|バル・デ|mexican|kebab|taco",
+  "note": ""
+ },
+ {
+  "priority": "16",
+  "category": "chinese",
+  "pattern": "中華料理|中国料理|中華|餃子|ぎょうざ|飯店|菜館|酒家|点心|小籠包|四川|chinese",
+  "note": ""
+ },
+ {
+  "priority": "17",
+  "category": "western",
+  "pattern": "イタリアン|トラットリア|ピッツェリア|オステリア|リストランテ|ピザ|パスタ|フレンチ|ビストロ|ブラッスリー|洋食|italian|pizza|pasta|trattoria|bistro|french",
+  "note": ""
+ },
+ {
+  "priority": "18",
+  "category": "fastfood",
+  "pattern": "バーガー|burger",
+  "note": ""
+ },
+ {
+  "priority": "19",
+  "category": "izakaya",
+  "pattern": "居酒屋|酒場|大衆酒場|炉端|炉ばた|立ち飲み|立呑|立飲|呑み処|酒処|izakaya",
+  "note": ""
+ },
+ {
+  "priority": "20",
+  "category": "bar",
+  "pattern": "(?<![a-zA-Zァ-ヶ])バー(?![ァ-ヶー])|\\bBAR\\b|\\bBar\\b|パブ|\\bPUB\\b|\\bPub\\b",
+  "note": ""
+ },
+ {
+  "priority": "21",
+  "category": "bakery",
+  "pattern": "パン屋|パン工房|ベーカリー|ブーランジェリー|bakery|boulangerie",
+  "note": ""
+ },
+ {
+  "priority": "22",
+  "category": "sweets",
+  "pattern": "甘味|和菓子|パティスリー|パンケーキ|ケーキ|パフェ|クレープ|ドーナツ|ジェラート|アイスクリーム|かき氷|sweets|patisserie|gelato",
+  "note": ""
+ },
+ {
+  "priority": "23",
+  "category": "cafe",
+  "pattern": "カフェ|珈琲|コーヒー|喫茶|café|cafe|coffee",
+  "note": ""
+ },
+ {
+  "priority": "24",
+  "category": "teishoku_don",
+  "pattern": "定食|食堂|丼|牛丼|海鮮丼|めし屋|めしや|弁当",
+  "note": ""
+ },
+ {
+  "priority": "25",
+  "category": "jp_other",
+  "pattern": "うなぎ|鰻|和食|おにぎり|おむすび",
+  "note": ""
+ }
+]

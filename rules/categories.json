@@ -1,0 +1,655 @@
+{
+ "note": "세부 카테고리(조건 필터·BERT 학습 클래스) ↔ Foursquare OS Places 카테고리(leaf 이름) ↔ 상위 26코드(prompts/prompt.txt). 일본 영업중 300곳 이상인 Foursquare 카테고리 기준(2026-09-15 릴리스). 여러 leaf 를 하나로 묶은 것은 일본에서 구분이 약하거나 적어서.",
+ "source": "Claude knowledge 2026-09-24",
+ "fine": [
+  {
+   "id": "ramen",
+   "fsq": [
+    "Ramen Restaurant"
+   ],
+   "parent": "ramen"
+  },
+  {
+   "id": "udon",
+   "fsq": [
+    "Udon Restaurant"
+   ],
+   "parent": "udon_soba"
+  },
+  {
+   "id": "soba",
+   "fsq": [
+    "Soba Restaurant"
+   ],
+   "parent": "udon_soba"
+  },
+  {
+   "id": "sushi",
+   "fsq": [
+    "Sushi Restaurant"
+   ],
+   "parent": "sushi"
+  },
+  {
+   "id": "tonkatsu",
+   "fsq": [
+    "Tonkatsu Restaurant"
+   ],
+   "parent": "katsu_tempura"
+  },
+  {
+   "id": "tempura",
+   "fsq": [
+    "Tempura Restaurant"
+   ],
+   "parent": "katsu_tempura"
+  },
+  {
+   "id": "kushikatsu",
+   "fsq": [
+    "Kushikatsu Restaurant"
+   ],
+   "parent": "katsu_tempura"
+  },
+  {
+   "id": "fried_chicken",
+   "fsq": [
+    "Fried Chicken Joint"
+   ],
+   "parent": "katsu_tempura"
+  },
+  {
+   "id": "yakitori",
+   "fsq": [
+    "Yakitori Restaurant"
+   ],
+   "parent": "yakitori"
+  },
+  {
+   "id": "okonomiyaki",
+   "fsq": [
+    "Okonomiyaki Restaurant"
+   ],
+   "parent": "okonomi"
+  },
+  {
+   "id": "monjayaki",
+   "fsq": [
+    "Monjayaki Restaurant"
+   ],
+   "parent": "okonomi"
+  },
+  {
+   "id": "takoyaki",
+   "fsq": [
+    "Takoyaki Place"
+   ],
+   "parent": "okonomi"
+  },
+  {
+   "id": "donburi",
+   "fsq": [
+    "Donburi Restaurant"
+   ],
+   "parent": "teishoku_don"
+  },
+  {
+   "id": "teishoku",
+   "fsq": [
+    "Teishoku Restaurant"
+   ],
+   "parent": "teishoku_don"
+  },
+  {
+   "id": "bento_deli",
+   "fsq": [
+    "Deli"
+   ],
+   "parent": "teishoku_don"
+  },
+  {
+   "id": "japanese_curry",
+   "fsq": [
+    "Japanese Curry Restaurant"
+   ],
+   "parent": "curry"
+  },
+  {
+   "id": "kaiseki",
+   "fsq": [
+    "Kaiseki Restaurant"
+   ],
+   "parent": "kaiseki"
+  },
+  {
+   "id": "nabe",
+   "fsq": [
+    "Nabe Restaurant"
+   ],
+   "parent": "nabe"
+  },
+  {
+   "id": "shabu_shabu",
+   "fsq": [
+    "Shabu-Shabu Restaurant"
+   ],
+   "parent": "nabe"
+  },
+  {
+   "id": "sukiyaki",
+   "fsq": [
+    "Sukiyaki Restaurant"
+   ],
+   "parent": "nabe"
+  },
+  {
+   "id": "unagi",
+   "fsq": [
+    "Unagi Restaurant"
+   ],
+   "parent": "jp_other"
+  },
+  {
+   "id": "japanese_family",
+   "fsq": [
+    "Japanese Family Restaurant"
+   ],
+   "parent": "jp_other"
+  },
+  {
+   "id": "seafood",
+   "fsq": [
+    "Seafood Restaurant"
+   ],
+   "parent": "jp_other"
+  },
+  {
+   "id": "yakiniku",
+   "fsq": [
+    "BBQ Joint"
+   ],
+   "parent": "yakiniku"
+  },
+  {
+   "id": "steakhouse",
+   "fsq": [
+    "Steakhouse"
+   ],
+   "parent": "steak_hamburg"
+  },
+  {
+   "id": "izakaya",
+   "fsq": [
+    "Sake Bar"
+   ],
+   "parent": "izakaya"
+  },
+  {
+   "id": "tebasaki",
+   "fsq": [
+    "Wings Joint"
+   ],
+   "parent": "izakaya"
+  },
+  {
+   "id": "bar",
+   "fsq": [
+    "Bar"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "beer_bar",
+   "fsq": [
+    "Beer Bar",
+    "Beer Garden",
+    "Brewery"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "cocktail_bar",
+   "fsq": [
+    "Cocktail Bar",
+    "Speakeasy"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "wine_bar",
+   "fsq": [
+    "Wine Bar"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "whisky_bar",
+   "fsq": [
+    "Whisky Bar"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "pub",
+   "fsq": [
+    "Pub",
+    "Irish Pub",
+    "Gastropub",
+    "Sports Bar",
+    "Dive Bar"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "karaoke_bar",
+   "fsq": [
+    "Karaoke Bar"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "lounge",
+   "fsq": [
+    "Lounge",
+    "Hotel Bar"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "gay_bar",
+   "fsq": [
+    "Gay Bar"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "hookah_bar",
+   "fsq": [
+    "Hookah Bar"
+   ],
+   "parent": "bar"
+  },
+  {
+   "id": "chinese",
+   "fsq": [
+    "Chinese Restaurant",
+    "Cantonese Restaurant",
+    "Szechuan Restaurant"
+   ],
+   "parent": "chinese"
+  },
+  {
+   "id": "dim_sum",
+   "fsq": [
+    "Dim Sum Restaurant"
+   ],
+   "parent": "chinese"
+  },
+  {
+   "id": "taiwanese",
+   "fsq": [
+    "Taiwanese Restaurant"
+   ],
+   "parent": "chinese"
+  },
+  {
+   "id": "gyoza",
+   "fsq": [
+    "Dumpling Restaurant"
+   ],
+   "parent": "chinese"
+  },
+  {
+   "id": "chinese_hotpot",
+   "fsq": [
+    "Hotpot Restaurant"
+   ],
+   "parent": "chinese"
+  },
+  {
+   "id": "korean",
+   "fsq": [
+    "Korean Restaurant",
+    "Korean BBQ Restaurant"
+   ],
+   "parent": "korean"
+  },
+  {
+   "id": "italian",
+   "fsq": [
+    "Italian Restaurant"
+   ],
+   "parent": "western"
+  },
+  {
+   "id": "pizza",
+   "fsq": [
+    "Pizzeria"
+   ],
+   "parent": "western"
+  },
+  {
+   "id": "french",
+   "fsq": [
+    "French Restaurant"
+   ],
+   "parent": "western"
+  },
+  {
+   "id": "bistro",
+   "fsq": [
+    "Bistro"
+   ],
+   "parent": "western"
+  },
+  {
+   "id": "yoshoku",
+   "fsq": [
+    "Yoshoku Restaurant"
+   ],
+   "parent": "western"
+  },
+  {
+   "id": "spanish",
+   "fsq": [
+    "Spanish Restaurant",
+    "Tapas Restaurant"
+   ],
+   "parent": "western"
+  },
+  {
+   "id": "german",
+   "fsq": [
+    "German Restaurant"
+   ],
+   "parent": "western"
+  },
+  {
+   "id": "mediterranean",
+   "fsq": [
+    "Mediterranean Restaurant"
+   ],
+   "parent": "western"
+  },
+  {
+   "id": "american",
+   "fsq": [
+    "American Restaurant"
+   ],
+   "parent": "western"
+  },
+  {
+   "id": "thai",
+   "fsq": [
+    "Thai Restaurant"
+   ],
+   "parent": "asian"
+  },
+  {
+   "id": "vietnamese",
+   "fsq": [
+    "Vietnamese Restaurant"
+   ],
+   "parent": "asian"
+  },
+  {
+   "id": "indian",
+   "fsq": [
+    "Indian Restaurant",
+    "North Indian Restaurant",
+    "South Indian Restaurant"
+   ],
+   "parent": "asian"
+  },
+  {
+   "id": "sri_lankan",
+   "fsq": [
+    "Sri Lankan Restaurant"
+   ],
+   "parent": "asian"
+  },
+  {
+   "id": "mexican",
+   "fsq": [
+    "Mexican Restaurant",
+    "Taco Restaurant"
+   ],
+   "parent": "foreign_other"
+  },
+  {
+   "id": "brazilian",
+   "fsq": [
+    "Brazilian Restaurant"
+   ],
+   "parent": "foreign_other"
+  },
+  {
+   "id": "turkish_kebab",
+   "fsq": [
+    "Turkish Restaurant",
+    "Kebab Restaurant"
+   ],
+   "parent": "foreign_other"
+  },
+  {
+   "id": "hawaiian",
+   "fsq": [
+    "Hawaiian Restaurant"
+   ],
+   "parent": "foreign_other"
+  },
+  {
+   "id": "halal",
+   "fsq": [
+    "Halal Restaurant"
+   ],
+   "parent": "foreign_other"
+  },
+  {
+   "id": "cafe",
+   "fsq": [
+    "Café"
+   ],
+   "parent": "cafe"
+  },
+  {
+   "id": "coffee",
+   "fsq": [
+    "Coffee Shop"
+   ],
+   "parent": "cafe"
+  },
+  {
+   "id": "tea_room",
+   "fsq": [
+    "Tea Room"
+   ],
+   "parent": "cafe"
+  },
+  {
+   "id": "pet_cafe",
+   "fsq": [
+    "Pet Café"
+   ],
+   "parent": "cafe"
+  },
+  {
+   "id": "bubble_tea",
+   "fsq": [
+    "Bubble Tea Shop"
+   ],
+   "parent": "cafe"
+  },
+  {
+   "id": "juice_bar",
+   "fsq": [
+    "Juice Bar"
+   ],
+   "parent": "cafe"
+  },
+  {
+   "id": "dessert",
+   "fsq": [
+    "Dessert Shop"
+   ],
+   "parent": "sweets"
+  },
+  {
+   "id": "pastry",
+   "fsq": [
+    "Pastry Shop",
+    "Cupcake Shop"
+   ],
+   "parent": "sweets"
+  },
+  {
+   "id": "ice_cream",
+   "fsq": [
+    "Ice Cream Parlor",
+    "Gelato Shop"
+   ],
+   "parent": "sweets"
+  },
+  {
+   "id": "crepe",
+   "fsq": [
+    "Creperie"
+   ],
+   "parent": "sweets"
+  },
+  {
+   "id": "donut",
+   "fsq": [
+    "Donut Shop"
+   ],
+   "parent": "sweets"
+  },
+  {
+   "id": "wagashi",
+   "fsq": [
+    "Wagashi Place"
+   ],
+   "parent": "sweets"
+  },
+  {
+   "id": "bakery",
+   "fsq": [
+    "Bakery",
+    "Bagel Shop"
+   ],
+   "parent": "bakery"
+  },
+  {
+   "id": "burger",
+   "fsq": [
+    "Burger Joint",
+    "Hot Dog Joint"
+   ],
+   "parent": "fastfood"
+  },
+  {
+   "id": "fast_food",
+   "fsq": [
+    "Fast Food Restaurant"
+   ],
+   "parent": "fastfood"
+  },
+  {
+   "id": "sandwich",
+   "fsq": [
+    "Sandwich Spot"
+   ],
+   "parent": "other"
+  },
+  {
+   "id": "salad_soup",
+   "fsq": [
+    "Salad Restaurant",
+    "Soup Spot"
+   ],
+   "parent": "other"
+  },
+  {
+   "id": "vegan",
+   "fsq": [
+    "Vegan and Vegetarian Restaurant"
+   ],
+   "parent": "other"
+  },
+  {
+   "id": "okinawa_soba",
+   "fsq": [],
+   "parent": "udon_soba",
+   "rule_only": true
+  }
+ ],
+ "exclude": {
+  "labels": [
+   "Dining and Drinking",
+   "Restaurant",
+   "Asian Restaurant",
+   "Japanese Restaurant",
+   "Cafe, Coffee, and Tea House",
+   "Noodle Restaurant",
+   "Snack Place",
+   "Food Court",
+   "Food Stand",
+   "Food Truck",
+   "Cafeteria",
+   "Diner",
+   "Comfort Food Restaurant",
+   "Theme Restaurant",
+   "Buffet",
+   "Breakfast Spot",
+   "Vineyard",
+   "Winery",
+   "Distillery"
+  ],
+  "why": "상위·모호 카테고리(라멘·우동·스낵바 등이 섞임) 또는 음식점이 아님. Sake Bar=이자카야, BBQ Joint=야키니쿠는 일본 이름 표본으로 확인"
+ },
+ "broad": {
+  "note": "세부 종류는 모르지만 넓은 조건(\"일식\", \"면 요리\")에는 걸리게 하는 Foursquare 상위·모호 카테고리. 학습 클래스 아님",
+  "map": {
+   "Japanese Restaurant": "japanese",
+   "Noodle Restaurant": "noodle",
+   "Asian Restaurant": "asian_food",
+   "Cafe, Coffee, and Tea House": "cafe"
+  }
+ },
+ "also_match": {
+  "note": "조건 필터에서 key 를 요청하면 value 세부 카테고리 가게도 포함 (Foursquare 라벨이 겹쳐 붙는 조합, BERT 오답 분석 2026-09-24). 상위 코드 요청은 원래 하위 전체를 포함",
+  "source": "Claude knowledge 2026-09-24",
+  "map": {
+   "izakaya": [
+    "yakitori",
+    "kushikatsu",
+    "tebasaki"
+   ],
+   "italian": [
+    "pizza"
+   ],
+   "chinese": [
+    "gyoza",
+    "taiwanese",
+    "dim_sum",
+    "chinese_hotpot"
+   ],
+   "soba": [
+    "okinawa_soba"
+   ],
+   "cafe": [
+    "coffee",
+    "tea_room",
+    "pet_cafe"
+   ],
+   "bar": [
+    "beer_bar",
+    "cocktail_bar",
+    "wine_bar",
+    "whisky_bar",
+    "pub",
+    "lounge"
+   ]
+  }
+ }
+}

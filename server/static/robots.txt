@@ -1,0 +1,23 @@
+# 이제 뭐 하지? — 이 파일을 고치면 바로 반영됨 (server/static/robots.txt)
+# 검색엔진: 첫 화면·약관 페이지만. API·로그인 경로는 수집하지 않음
+User-agent: *
+Allow: /$
+Allow: /static/legal/
+Disallow: /api/
+Disallow: /auth/
+
+# AI 학습·수집 봇 차단 (이용약관 4조: 자동 대량 수집 금지와 같은 취지)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: PerplexityBot
+User-agent: Bytespider
+User-agent: meta-externalagent
+User-agent: Applebot-Extended
+Disallow: /

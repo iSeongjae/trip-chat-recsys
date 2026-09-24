@@ -1,0 +1,14 @@
+{
+  "_note": "Supabase 행동 로그 → 로컬 증분 내보내기 설정 (scripts/db/export_logs.py). 진행 위치는 state_file 에 저장되어 다음 실행이 그 뒤부터 이어간다.",
+  "out_dir": "data/logs_export",
+  "state_file": "data/logs_export/_state.json",
+  "batch_size": 5000,
+  "max_batches_per_run": 200,
+  "safety_lag_seconds": 120,
+  "statement_timeout_ms": 60000,
+  "retry": { "attempts": 6, "base_delay_s": 2, "max_delay_s": 60 },
+  "tables": {
+    "reaction_logs": { "enabled": true,  "cursor": ["id"],               "time_col": "created_at" },
+    "turn_logs":     { "enabled": false, "cursor": ["created_at", "id"], "time_col": "created_at" }
+  }
+}

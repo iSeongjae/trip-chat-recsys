@@ -1,0 +1,21 @@
+[
+ {
+  "pattern": "中華そば|中華ソバ|中華蕎麦|中華SOBA",
+  "fine": "ramen",
+  "parent": "ramen",
+  "note": "中華そば 는 라멘 (BERT·Foursquare 가 chinese/soba 로 보낸 경우)"
+ },
+ {
+  "pattern": "沖縄そば|ソーキそば|宮古そば|八重山そば|沖縄ソバ",
+  "fine": "okinawa_soba",
+  "parent": "udon_soba",
+  "note": "오키나와 소바 (밀가루 면, 메밀 소바 아님)"
+ },
+ {
+  "pattern": "(?<!焼き)(?<!焼)(?<!中華)そば|(?<!中華)ソバ",
+  "fine": "okinawa_soba",
+  "parent": "udon_soba",
+  "region": "okinawa",
+  "note": "오키나와현에서 そば 는 오키나와 소바"
+ }
+]

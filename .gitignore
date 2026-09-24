@@ -1,0 +1,25 @@
+# ── 비밀값 (절대 올리지 않음) ──
+.env
+.env.*
+deploy/prod.env
+# Google OAuth 클라이언트 파일
+client_secret*.json
+*.pem
+*.key
+
+# ── 데이터·모델: 용량 5GB, 라이선스별 재배포 조건 있음 → docs/pipeline.md 로 다시 생성 ──
+data/
+
+# ── 디자인 도구 원본 (시안 캡처는 docs/design/ 에 복사) ──
+이제뭐하지? (design)/
+
+# ── 기타 ──
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.db
+*.db-*
+*.tgz
+
+# ── 내부 작업 메모 ──
+TODO.md

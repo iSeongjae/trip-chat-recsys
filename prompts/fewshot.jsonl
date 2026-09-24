@@ -1,0 +1,39 @@
+{"id": "e1", "name": "中華そば三丁目", "tags": "amenity=restaurant cuisine=chinese", "cat": "ramen"}
+{"id": "e2", "name": "中華飯店・ラーメン 円来", "tags": "amenity=restaurant", "cat": "ramen"}
+{"id": "e3", "name": "栄屋本店", "tags": "amenity=restaurant cuisine=ramen", "cat": "ramen"}
+{"id": "e4", "name": "中華料理 山翠", "tags": "amenity=restaurant cuisine=chinese", "cat": "chinese"}
+{"id": "e5", "name": "手打ちそば　中むら", "tags": "amenity=restaurant cuisine=soba", "cat": "udon_soba"}
+{"id": "e6", "name": "大起水産 回転寿司 堺店", "tags": "amenity=restaurant", "cat": "sushi"}
+{"id": "e7", "name": "天ぷら にしむら", "tags": "amenity=restaurant cuisine=tenpura", "cat": "katsu_tempura"}
+{"id": "e8", "name": "やきとり寛", "tags": "amenity=pub", "cat": "yakitori"}
+{"id": "e9", "name": "大衆酒場 かぼちゃ", "tags": "amenity=pub", "cat": "izakaya"}
+{"id": "e10", "name": "BAR 空", "tags": "amenity=bar", "cat": "bar"}
+{"id": "e11", "name": "お好み焼 じゅーはちばん", "tags": "amenity=restaurant", "cat": "okonomi"}
+{"id": "e12", "name": "吉田食堂", "tags": "amenity=restaurant cuisine=japanese", "cat": "teishoku_don"}
+{"id": "e13", "name": "吉野家", "tags": "amenity=fast_food brand=吉野家 YOSHINOYA", "cat": "teishoku_don"}
+{"id": "e14", "name": "CoCo壱番屋", "tags": "amenity=fast_food cuisine=japanese brand=CoCo壱番屋 brand:en=CoCo Ichibanya brand:wikidata=Q5986105 takeaway=yes", "cat": "curry"}
+{"id": "e15", "name": "インドカレー サンタ", "tags": "amenity=restaurant cuisine=curry;indian", "cat": "asian"}
+{"id": "e16", "name": "割烹魚政", "tags": "amenity=restaurant cuisine=japanese", "cat": "kaiseki"}
+{"id": "e17", "name": "博多もつ鍋 やまや", "tags": "amenity=restaurant cuisine=japanese", "cat": "nabe"}
+{"id": "e18", "name": "うなぎ藤田", "tags": "amenity=restaurant", "cat": "jp_other"}
+{"id": "e19", "name": "焼肉ジャンジャン", "tags": "amenity=restaurant cuisine=korean takeaway=no", "cat": "yakiniku"}
+{"id": "e20", "name": "ステーキ＆ハンバーグ松木", "tags": "amenity=restaurant cuisine=steak_house", "cat": "steak_hamburg"}
+{"id": "e21", "name": "韓丼", "tags": "amenity=restaurant cuisine=japanese;カルビ丼;スンドゥブ", "cat": "korean"}
+{"id": "e22", "name": "トラットリア モンテネーゼ", "tags": "amenity=restaurant cuisine=italian", "cat": "western"}
+{"id": "e23", "name": "洋食コスギ", "tags": "amenity=restaurant", "cat": "western"}
+{"id": "e24", "name": "アジアンケバブ", "tags": "amenity=restaurant cuisine=kebab", "cat": "foreign_other"}
+{"id": "e25", "name": "喫茶 富士", "tags": "amenity=cafe cuisine=coffee_shop", "cat": "cafe"}
+{"id": "e26", "name": "LONE", "tags": "amenity=cafe", "cat": "cafe"}
+{"id": "e27", "name": "甘味処 京源", "tags": "amenity=cafe", "cat": "sweets"}
+{"id": "e28", "name": "魔法のパンケーキ", "tags": "amenity=restaurant cuisine=burger", "cat": "sweets"}
+{"id": "e29", "name": "オリオンベーカリー", "tags": "amenity=restaurant", "cat": "bakery"}
+{"id": "e30", "name": "マクドナルド", "tags": "amenity=fast_food cuisine=burger brand=マクドナルド brand:en=McDonald's brand:wikidata=Q38076 takeaway=yes", "cat": "fastfood"}
+{"id": "e31", "name": "バスマチフードホール", "tags": "amenity=food_court", "cat": "other"}
+{"id": "e32", "name": "まさや", "tags": "amenity=restaurant", "cat": "unknown"}
+{"id": "e33", "name": "本格長崎ちゃんぽん 皿うどん ばってん", "tags": "amenity=restaurant", "cat": "chinese"}
+{"id": "e34", "name": "いし山", "tags": "amenity=pub", "cat": "unknown"}
+{"id": "e35", "name": "銀嶺", "tags": "amenity=fast_food", "cat": "unknown"}
+{"id": "e36", "name": "伍助", "tags": "amenity=restaurant cuisine=japanese", "cat": "unknown"}
+{"id": "e37", "name": "HUB京都京劇店", "tags": "amenity=pub", "cat": "bar"}
+{"id": "e38", "name": "SHYRON", "tags": "amenity=restaurant cuisine=barbecue", "cat": "yakiniku"}
+{"id": "e39", "name": "ひとすじ", "tags": "amenity=pub", "cat": "unknown"}

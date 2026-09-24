@@ -1,0 +1,150 @@
+[
+ {
+  "fine": "udon",
+  "pattern": "うどん|饂飩|ウドン"
+ },
+ {
+  "fine": "soba",
+  "pattern": "(?<!焼き)(?<!焼)(?<!中華)(?<!油)(?<!まぜ)そば|(?<!焼き)蕎麦|(?<!中華)ソバ"
+ },
+ {
+  "fine": "tonkatsu",
+  "pattern": "とんかつ|豚カツ|トンカツ|とんかつ"
+ },
+ {
+  "fine": "tempura",
+  "pattern": "天ぷら|天麩羅|天婦羅|天丼"
+ },
+ {
+  "fine": "kushikatsu",
+  "pattern": "串カツ|串かつ|串揚げ|串揚"
+ },
+ {
+  "fine": "fried_chicken",
+  "pattern": "唐揚|から揚|からあげ|唐揚げ"
+ },
+ {
+  "fine": "okonomiyaki",
+  "pattern": "お好み焼|お好焼"
+ },
+ {
+  "fine": "monjayaki",
+  "pattern": "もんじゃ"
+ },
+ {
+  "fine": "takoyaki",
+  "pattern": "たこ焼|たこやき|タコ焼"
+ },
+ {
+  "fine": "donburi",
+  "pattern": "丼|どんぶり|牛丼"
+ },
+ {
+  "fine": "teishoku",
+  "pattern": "定食|食堂"
+ },
+ {
+  "fine": "bento_deli",
+  "pattern": "弁当|惣菜|お惣菜|べんとう"
+ },
+ {
+  "fine": "shabu_shabu",
+  "pattern": "しゃぶしゃぶ|しゃぶ"
+ },
+ {
+  "fine": "sukiyaki",
+  "pattern": "すき焼|すきやき"
+ },
+ {
+  "fine": "nabe",
+  "pattern": "もつ鍋|ちゃんこ|おでん|鍋"
+ },
+ {
+  "fine": "unagi",
+  "pattern": "うなぎ|鰻|ウナギ"
+ },
+ {
+  "fine": "tebasaki",
+  "pattern": "手羽先"
+ },
+ {
+  "fine": "gyoza",
+  "pattern": "餃子|ぎょうざ|ギョーザ"
+ },
+ {
+  "fine": "taiwanese",
+  "pattern": "台湾"
+ },
+ {
+  "fine": "dim_sum",
+  "pattern": "点心|飲茶|小籠包"
+ },
+ {
+  "fine": "pizza",
+  "pattern": "ピザ|ピッツァ|pizza|pizzeria"
+ },
+ {
+  "fine": "italian",
+  "pattern": "イタリアン|トラットリア|リストランテ|パスタ|italian|trattoria"
+ },
+ {
+  "fine": "french",
+  "pattern": "フレンチ|french|ビストロ"
+ },
+ {
+  "fine": "yoshoku",
+  "pattern": "洋食|グリル"
+ },
+ {
+  "fine": "thai",
+  "pattern": "タイ料理|タイ屋台"
+ },
+ {
+  "fine": "vietnamese",
+  "pattern": "ベトナム|フォー"
+ },
+ {
+  "fine": "indian",
+  "pattern": "インド|ネパール"
+ },
+ {
+  "fine": "coffee",
+  "pattern": "珈琲|コーヒー|coffee"
+ },
+ {
+  "fine": "pet_cafe",
+  "pattern": "猫カフェ|ねこカフェ|ネコカフェ|ふくろう"
+ },
+ {
+  "fine": "pastry",
+  "pattern": "ケーキ|パティスリー|patisserie"
+ },
+ {
+  "fine": "crepe",
+  "pattern": "クレープ"
+ },
+ {
+  "fine": "donut",
+  "pattern": "ドーナツ"
+ },
+ {
+  "fine": "wagashi",
+  "pattern": "和菓子|甘味|だんご|団子"
+ },
+ {
+  "fine": "ice_cream",
+  "pattern": "アイス|ジェラート|gelato"
+ },
+ {
+  "fine": "wine_bar",
+  "pattern": "ワイン|wine"
+ },
+ {
+  "fine": "beer_bar",
+  "pattern": "ビール|ビア|beer|brewing"
+ },
+ {
+  "fine": "burger",
+  "pattern": "バーガー|burger"
+ }
+]

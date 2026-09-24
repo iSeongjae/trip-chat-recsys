@@ -1,0 +1,20 @@
+# Cloud Build 에 올릴 파일만 (없으면 .gitignore 를 따라 data/ 가 통째로 빠져 빌드가 실패함)
+/*
+!/src/
+!/rules/
+!/server/
+!/deploy/
+!/data/
+/data/*
+!/data/processed/
+/data/processed/*
+!/data/processed/items_japan.json
+!/data/interim/
+/data/interim/*
+!/data/interim/osm_stations_jp.json
+!/data/geoip/
+**/__pycache__/
+/server/tools/
+*.db
+*.db-*
+/deploy/prod.env

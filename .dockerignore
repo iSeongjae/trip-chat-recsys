@@ -1,0 +1,21 @@
+# 이미지에 넣을 데이터는 세 파일만 (장소·역·IP 국가). 나머지 data/ 는 제외
+data/*
+!data/processed/
+data/processed/*
+!data/processed/items_japan.json
+!data/interim/
+data/interim/*
+!data/interim/osm_stations_jp.json
+!data/geoip/
+*.db*
+**/__pycache__
+.git
+.env
+deploy/prod.env
+이제뭐하지? (design)
+reports
+scripts
+tests
+prompts
+docs
+server/tools

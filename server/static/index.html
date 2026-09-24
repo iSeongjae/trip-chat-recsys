@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>이제 뭐 하지?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5/dist/maplibre-gl.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { ink: '#1e293b', leaf: '#2E4230', leafbg: '#EAF0E9', leafline: '#CCD8CB', canvas: '#f6faff', coral: '#C84B31', coralbg: '#FDF2F0' },
+  fontFamily: { head: ['Jua'], body: ['Gowun Dodum'] } } } };
+</script>
+<style>
+  html, body { margin: 0; padding: 0; overscroll-behavior: none; }
+  ::-webkit-scrollbar { display: none; }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500; }
+  .fill { font-variation-settings: 'FILL' 1, 'wght' 500; }
+  .pin { background: #fff; border-radius: 9999px; padding: 8px 16px; box-shadow: 0 6px 20px rgba(30,42,51,.10); border: 1px solid #E3ECE2; font-family: Jua; color: #2E4230; white-space: nowrap; cursor: pointer; }
+  .pin small { font-family: 'Gowun Dodum'; color: #64748b; margin-left: 4px; }
+  .pin.on { background: #2E4230; color: #fff; } .pin.on small { color: #cbd5e1; }
+  .maplibregl-ctrl-attrib { background: rgba(255,255,255,.85) !important; border-radius: 9999px !important; font-size: 11px; }
+  .me { width: 16px; height: 16px; border-radius: 9999px; background: #2b67d1; border: 3px solid #fff; box-shadow: 0 0 0 8px rgba(43,103,209,.18); }
+</style>
+</head>
+<body class="bg-canvas font-body text-[15px] text-ink antialiased">
+<div id="app" class="max-w-[430px] mx-auto min-h-screen relative"></div>
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-24 z-[60] hidden bg-leaf text-white px-4 py-2 rounded-full text-sm shadow-lg"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

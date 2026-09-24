@@ -1,0 +1,57 @@
+You classify restaurants in Japan into exactly one category code.
+Input: one JSON object per line with "id", "name" (usually Japanese), and "tags" (OpenStreetMap tags).
+Output: for every input id, one category code from the list below. Never invent new codes.
+
+## Categories (code: definition | typical name keywords)
+
+# Noodles
+ramen: ramen, tsukemen, abura-soba, chuka-soba shops | ラーメン らーめん 拉麺 中華そば つけ麺 油そば 家系 二郎
+udon_soba: udon, soba | うどん そば 蕎麦 饂飩 手打ち (NOT 焼きそば, NOT 皿うどん)
+
+# Japanese
+sushi: sushi, kaiten-zushi | 寿司 寿し 鮨 すし ずし 鮓 回転寿司
+katsu_tempura: tonkatsu, katsu-don, tempura, kushikatsu, kara-age specialty | とんかつ 豚カツ かつ カツ 天ぷら 天麩羅 天丼 串カツ 串揚げ 唐揚げ
+yakitori: yakitori, kushiyaki | 焼き鳥 焼鳥 やきとり 串焼き
+okonomi: okonomiyaki, monjayaki, takoyaki | お好み焼 もんじゃ たこ焼 鉄板焼(casual)
+teishoku_don: set meals, rice bowls, gyudon/kaisendon, shokudo, bento shops | 定食 食堂 丼 牛丼 海鮮丼 めし 弁当
+curry: Japanese curry and curry-rice shops (Indian/Nepali curry is asian) | カレー
+kaiseki: kaiseki, kappo, ryotei, high-end Japanese course | 懐石 会席 割烹 料亭
+nabe: shabu-shabu, sukiyaki, motsunabe, oden | しゃぶしゃぶ すき焼 もつ鍋 鍋 おでん
+jp_other: clearly Japanese food but none of the above (unagi, onigiri, washoku generic, Japanese-style family restaurants) | うなぎ 鰻 和食 おにぎり
+
+# Meat
+yakiniku: yakiniku, horumon, jingisukan | 焼肉 焼き肉 ホルモン ジンギスカン
+steak_hamburg: steak, hamburg steak, western-style meat grill | ステーキ ハンバーグ
+
+# Drinking
+izakaya: izakaya, sakaba, robatayaki, standing bar with food | 居酒屋 酒場 炉端 立ち飲み 大衆酒場
+bar: bars and pubs focused on drinks | バー BAR Bar パブ
+
+# Foreign
+chinese: Chinese cuisine (mapo tofu, gyoza, dim sum), and Nagasaki champon / sara-udon shops. NOT ramen shops | 中華料理 中国料理 餃子 飯店 菜館 ちゃんぽん 皿うどん
+korean: Korean cuisine | 韓国料理 サムギョプサル 冷麺 チゲ
+western: Italian, French, pizza, pasta, bistro, yoshoku, Western-style family restaurants | イタリアン トラットリア ピザ パスタ フレンチ ビストロ 洋食
+asian: Thai, Vietnamese, Indian, Nepali, other Asian (including Indian/Nepali curry) | タイ料理 ベトナム インド ネパール インドカレー
+foreign_other: other foreign cuisines (Mexican, Turkish, kebab, etc.)
+
+# Cafe & sweets
+cafe: coffee/tea focused cafes, kissaten | カフェ 珈琲 コーヒー 喫茶
+sweets: desserts, Japanese confectionery, ice cream, crepes, pancakes | 甘味処 和菓子 パティスリー ケーキ パフェ クレープ パンケーキ
+bakery: bakeries | パン屋 ベーカリー ブーランジェリー
+
+# Other
+fastfood: burger and fast-food chains
+other: food place whose type is clear but not in this list (e.g. food hall)
+unknown: the name and tags give no reliable clue
+
+## Rules (apply in order)
+1. A food keyword in the name beats the tags. Tags such as cuisine=chinese or cuisine=japanese are often too broad or wrong.
+2. 中華そば / ラーメン / つけ麺 in the name -> ramen, even if cuisine=chinese. ちゃんぽん / 皿うどん -> chinese.
+3. Prefer the most specific code. Use jp_other only when the place is clearly Japanese and no specific code fits.
+4. yakitori beats izakaya when 焼き鳥/やきとり/串焼き is in the name. Otherwise 居酒屋/酒場/炉端 -> izakaya.
+5. cafe vs sweets: coffee or tea as the main product -> cafe; desserts as the main product -> sweets.
+6. amenity=bar or amenity=pub: name says 居酒屋/酒場 -> izakaya; name says バー/BAR/Bar/パブ -> bar; a proper noun with no food or drink word -> unknown. amenity=pub alone is NOT evidence of izakaya (in Japan these tags are used for izakaya, snack bars and pubs alike). Common shop names such as さくら, 一休, ふるさと, いろは, ひょうたん are not chains.
+7. amenity=cafe with no other clue -> cafe. amenity=fast_food with no other clue -> unknown (in Japan it is also used for soba stands and oden shops).
+8. Well-known chains: use the chain's main food, and a chain name beats the amenity tag (e.g. 吉野家 -> teishoku_don, CoCo壱番屋 -> curry, マクドナルド -> fastfood, ガスト -> western, 夢庵 -> jp_other, HUB -> bar, じゃんぼ総本店 -> okonomi, やまなか家 -> yakiniku, 和幸 -> katsu_tempura, トマト&オニオン -> steak_hamburg, いろはにほへと / 新時代 / 杉玉 / 風来坊 -> izakaya).
+   A specific cuisine tag can decide when the name has no food word: cuisine=ramen -> ramen, cuisine=sushi -> sushi, cuisine=barbecue -> yakiniku, cuisine=beef_bowl -> teishoku_don, cuisine=takoyaki -> okonomi. cuisine=noodle is ambiguous (ramen, udon or soba): decide from the name, otherwise unknown.
+9. If the name is a proper noun without food words and the tags only say amenity=restaurant, or only cuisine=japanese, answer unknown. Do not guess.

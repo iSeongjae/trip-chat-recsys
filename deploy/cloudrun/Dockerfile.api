@@ -1,0 +1,17 @@
+# api 컨테이너: FastAPI + 추천 로직 + 장소 데이터(메모리에 올림). DB 는 Supabase. Cloud Run 이 PORT(8080)를 준다.
+FROM python:3.12-slim
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 APP_ENV=prod
+COPY server/requirements.txt server/requirements.txt
+RUN pip install --no-cache-dir -r server/requirements.txt
+COPY src src
+COPY rules rules
+COPY server/app server/app
+COPY server/static server/static
+COPY data/processed/items_japan.json data/processed/items_japan.json
+COPY data/interim/osm_stations_jp.json data/interim/osm_stations_jp.json
+COPY data/geoip/dbip-country-lite.mmdb data/geoip/dbip-country-lite.mmdb
+RUN useradd -u 10001 -M app && chown -R app /app
+USER app
+WORKDIR /app/server
+CMD exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8080} --proxy-headers --forwarded-allow-ips '*'

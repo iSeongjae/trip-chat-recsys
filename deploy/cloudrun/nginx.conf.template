@@ -1,0 +1,22 @@
+server {
+    listen ${PORT};
+    server_tokens off;
+    root /usr/share/nginx/html;
+    gzip on;
+    gzip_types text/css application/javascript application/json text/plain;
+
+    location = / { try_files /index.html =404; add_header Cache-Control "no-cache"; }
+    location = /robots.txt { alias /usr/share/nginx/html/static/robots.txt; }
+    location /static/ { add_header Cache-Control "no-cache"; }   # 매번 ETag 로 재검증 → 배포 직후 옛 JS 가 남지 않음
+
+    # API·로그인·헬스체크 → api 서비스 (Cloud Run 은 Host 헤더로 서비스를 찾으므로 api 주소로 바꿔 보냄)
+    location ~ ^/(api|auth|health)(/|$) {
+        proxy_pass ${API_URL};
+        proxy_set_header Host ${API_HOST};
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_ssl_server_name on;
+        proxy_read_timeout 60s;
+        client_max_body_size 64k;
+    }
+}

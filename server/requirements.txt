@@ -1,0 +1,8 @@
+fastapi>=0.141
+uvicorn[standard]>=0.40
+authlib>=1.8
+itsdangerous>=2.2
+httpx>=0.28
+openai>=3.19
+psycopg[binary,pool]>=3.2
+maxminddb>=2.6

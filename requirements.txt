@@ -1,0 +1,16 @@
+# 파이프라인(수집·라벨링·학습·평가) + 서버 전체. 서버 컨테이너만은 server/requirements.txt
+# 2026-09-25 검증한 버전 기준 (python 3.13)
+-r server/requirements.txt
+osmium>=4.3          # OSM pbf 추출 (pyosmium)
+duckdb>=1.5          # Foursquare parquet 원격 조회
+pyarrow>=24
+numpy>=2.1
+scipy>=1.14
+scikit-learn>=1.6    # 전파 실험 (LabelSpreading)
+torch>=2.7           # BERT 학습 (Apple Silicon 은 MPS)
+transformers>=5.14
+fugashi>=1.5         # tohoku BERT 토크나이저 (MeCab)
+unidic-lite>=1.0.8
+pykakasi>=2.3        # 일본어 이름 → 한글 표기
+matplotlib>=3.10     # 분석 그림
+pytest>=9

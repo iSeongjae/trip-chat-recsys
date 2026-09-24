@@ -1,0 +1,817 @@
+{
+ "note": "조건(include_sub/exclude_sub) 자유 텍스트 → 세부 카테고리(fine)·상위 코드(coarse)·넓은 분류(broad) 사전. 첫 이름이 표시용 한국어 이름",
+ "source": "Claude knowledge 2026-09-24",
+ "coarse": {
+  "ramen": [
+   "라멘",
+   "라면",
+   "ラーメン",
+   "ramen",
+   "츠케멘",
+   "つけ麺"
+  ],
+  "udon_soba": [
+   "우동·소바",
+   "면(일식)"
+  ],
+  "sushi": [
+   "스시",
+   "초밥",
+   "寿司",
+   "sushi",
+   "회전초밥"
+  ],
+  "katsu_tempura": [
+   "돈카츠·튀김",
+   "튀김",
+   "카츠",
+   "揚げ物"
+  ],
+  "yakitori": [
+   "야키토리",
+   "꼬치",
+   "닭꼬치",
+   "焼き鳥",
+   "yakitori",
+   "쿠시야키"
+  ],
+  "okonomi": [
+   "오코노미야키·다코야키",
+   "철판",
+   "뎃판"
+  ],
+  "teishoku_don": [
+   "정식·덮밥",
+   "정식",
+   "덮밥",
+   "백반",
+   "定食",
+   "丼",
+   "도시락"
+  ],
+  "curry": [
+   "카레",
+   "일본 카레",
+   "カレー",
+   "curry",
+   "카레라이스"
+  ],
+  "kaiseki": [
+   "가이세키",
+   "懐石",
+   "割烹",
+   "갓포",
+   "료테이",
+   "코스요리"
+  ],
+  "nabe": [
+   "나베",
+   "전골",
+   "鍋",
+   "샤부샤부·스키야키",
+   "모츠나베",
+   "もつ鍋",
+   "오뎅",
+   "おでん"
+  ],
+  "jp_other": [
+   "일식(기타)",
+   "와쇼쿠"
+  ],
+  "yakiniku": [
+   "야키니쿠",
+   "고기",
+   "고깃집",
+   "焼肉",
+   "불고기",
+   "호르몬",
+   "징기스칸"
+  ],
+  "steak_hamburg": [
+   "스테이크·함박",
+   "스테이크",
+   "함박",
+   "함박스테이크",
+   "ステーキ",
+   "ハンバーグ"
+  ],
+  "izakaya": [
+   "이자카야",
+   "居酒屋",
+   "선술집",
+   "酒場"
+  ],
+  "bar": [
+   "바",
+   "bar",
+   "バー",
+   "술집(바)"
+  ],
+  "chinese": [
+   "중식",
+   "중국요리",
+   "중화",
+   "中華",
+   "chinese",
+   "짬뽕",
+   "ちゃんぽん"
+  ],
+  "korean": [
+   "한식",
+   "한국요리",
+   "韓国料理",
+   "korean"
+  ],
+  "western": [
+   "양식",
+   "서양요리",
+   "洋食",
+   "western"
+  ],
+  "asian": [
+   "아시아 요리",
+   "동남아",
+   "에스닉",
+   "エスニック"
+  ],
+  "foreign_other": [
+   "세계 요리",
+   "이국 요리"
+  ],
+  "cafe": [
+   "카페",
+   "cafe",
+   "カフェ",
+   "커피",
+   "喫茶",
+   "킷사텐",
+   "찻집"
+  ],
+  "sweets": [
+   "디저트",
+   "스위츠",
+   "スイーツ",
+   "케이크",
+   "단것",
+   "甘味"
+  ],
+  "bakery": [
+   "베이커리",
+   "빵",
+   "빵집",
+   "パン",
+   "bakery"
+  ],
+  "fastfood": [
+   "패스트푸드",
+   "fast food",
+   "ファストフード"
+  ],
+  "other": [
+   "기타"
+  ]
+ },
+ "fine": {
+  "ramen": [
+   "라멘"
+  ],
+  "udon": [
+   "우동",
+   "うどん",
+   "udon",
+   "사누키우동"
+  ],
+  "soba": [
+   "소바",
+   "메밀",
+   "메밀국수",
+   "そば",
+   "蕎麦",
+   "soba"
+  ],
+  "sushi": [
+   "스시"
+  ],
+  "tonkatsu": [
+   "돈카츠",
+   "돈까스",
+   "とんかつ",
+   "tonkatsu"
+  ],
+  "tempura": [
+   "텐푸라",
+   "덴푸라",
+   "튀김(텐푸라)",
+   "天ぷら",
+   "tempura",
+   "텐동"
+  ],
+  "kushikatsu": [
+   "쿠시카츠",
+   "구시카츠",
+   "串カツ",
+   "kushikatsu",
+   "꼬치튀김"
+  ],
+  "fried_chicken": [
+   "가라아게",
+   "치킨",
+   "닭튀김",
+   "唐揚げ",
+   "から揚げ",
+   "fried chicken"
+  ],
+  "yakitori": [
+   "야키토리"
+  ],
+  "okonomiyaki": [
+   "오코노미야키",
+   "お好み焼き",
+   "okonomiyaki"
+  ],
+  "monjayaki": [
+   "몬자야키",
+   "몬자",
+   "もんじゃ",
+   "monjayaki"
+  ],
+  "takoyaki": [
+   "타코야키",
+   "다코야키",
+   "たこ焼き",
+   "takoyaki"
+  ],
+  "donburi": [
+   "덮밥",
+   "돈부리",
+   "규동",
+   "가츠동",
+   "카이센동",
+   "丼",
+   "donburi"
+  ],
+  "teishoku": [
+   "정식",
+   "백반",
+   "定食",
+   "teishoku",
+   "식당(정식)"
+  ],
+  "bento_deli": [
+   "도시락",
+   "벤토",
+   "반찬",
+   "弁当",
+   "惣菜",
+   "deli"
+  ],
+  "japanese_curry": [
+   "카레"
+  ],
+  "kaiseki": [
+   "가이세키"
+  ],
+  "nabe": [
+   "나베",
+   "전골",
+   "모츠나베",
+   "もつ鍋",
+   "오뎅",
+   "おでん",
+   "창코나베"
+  ],
+  "shabu_shabu": [
+   "샤부샤부",
+   "しゃぶしゃぶ",
+   "shabu shabu"
+  ],
+  "sukiyaki": [
+   "스키야키",
+   "すき焼き",
+   "sukiyaki"
+  ],
+  "unagi": [
+   "장어",
+   "우나기",
+   "장어덮밥",
+   "うなぎ",
+   "鰻",
+   "unagi",
+   "히츠마부시"
+  ],
+  "japanese_family": [
+   "일식 패밀리레스토랑",
+   "패밀리레스토랑(일식)"
+  ],
+  "seafood": [
+   "해산물",
+   "해물",
+   "海鮮",
+   "seafood",
+   "생선요리"
+  ],
+  "yakiniku": [
+   "야키니쿠"
+  ],
+  "steakhouse": [
+   "스테이크"
+  ],
+  "izakaya": [
+   "이자카야"
+  ],
+  "tebasaki": [
+   "데바사키",
+   "닭날개",
+   "手羽先",
+   "tebasaki"
+  ],
+  "bar": [
+   "바"
+  ],
+  "beer_bar": [
+   "맥주",
+   "맥주집",
+   "비어바",
+   "크래프트비어",
+   "ビール",
+   "beer"
+  ],
+  "cocktail_bar": [
+   "칵테일",
+   "칵테일바",
+   "cocktail"
+  ],
+  "wine_bar": [
+   "와인",
+   "와인바",
+   "ワイン",
+   "wine"
+  ],
+  "whisky_bar": [
+   "위스키",
+   "위스키바",
+   "ウイスキー",
+   "whisky"
+  ],
+  "pub": [
+   "펍",
+   "pub",
+   "パブ",
+   "스포츠바"
+  ],
+  "karaoke_bar": [
+   "가라오케바",
+   "노래방 바",
+   "カラオケ"
+  ],
+  "lounge": [
+   "라운지",
+   "lounge",
+   "호텔바"
+  ],
+  "gay_bar": [
+   "게이바",
+   "gay bar"
+  ],
+  "hookah_bar": [
+   "물담배",
+   "후카",
+   "シーシャ",
+   "hookah",
+   "shisha"
+  ],
+  "chinese": [
+   "중식"
+  ],
+  "dim_sum": [
+   "딤섬",
+   "점심(딤섬)",
+   "飲茶",
+   "dim sum",
+   "얌차"
+  ],
+  "taiwanese": [
+   "대만요리",
+   "대만 음식",
+   "台湾料理",
+   "taiwanese",
+   "루러우판"
+  ],
+  "gyoza": [
+   "교자",
+   "만두",
+   "餃子",
+   "gyoza"
+  ],
+  "chinese_hotpot": [
+   "훠궈",
+   "마라탕",
+   "火鍋",
+   "hotpot"
+  ],
+  "korean": [
+   "한식"
+  ],
+  "italian": [
+   "이탈리안",
+   "이탈리아 요리",
+   "파스타",
+   "イタリアン",
+   "italian"
+  ],
+  "pizza": [
+   "피자",
+   "ピザ",
+   "pizza"
+  ],
+  "french": [
+   "프렌치",
+   "프랑스 요리",
+   "フレンチ",
+   "french"
+  ],
+  "bistro": [
+   "비스트로",
+   "bistro",
+   "ビストロ"
+  ],
+  "yoshoku": [
+   "요쇼쿠",
+   "경양식",
+   "일본식 양식",
+   "오므라이스",
+   "함박(요쇼쿠)"
+  ],
+  "spanish": [
+   "스페인 요리",
+   "타파스",
+   "파에야",
+   "スペイン",
+   "spanish"
+  ],
+  "german": [
+   "독일 요리",
+   "ドイツ",
+   "german"
+  ],
+  "mediterranean": [
+   "지중해 요리",
+   "그리스 요리",
+   "mediterranean"
+  ],
+  "american": [
+   "미국 요리",
+   "アメリカン",
+   "american",
+   "바베큐(미국식)"
+  ],
+  "thai": [
+   "태국 요리",
+   "태국음식",
+   "タイ料理",
+   "thai",
+   "팟타이"
+  ],
+  "vietnamese": [
+   "베트남 요리",
+   "쌀국수",
+   "ベトナム",
+   "vietnamese",
+   "pho"
+  ],
+  "indian": [
+   "인도 요리",
+   "인도 카레",
+   "インド",
+   "indian",
+   "난"
+  ],
+  "sri_lankan": [
+   "스리랑카 요리",
+   "スリランカ"
+  ],
+  "mexican": [
+   "멕시코 요리",
+   "타코",
+   "メキシカン",
+   "mexican",
+   "taco"
+  ],
+  "brazilian": [
+   "브라질 요리",
+   "슈하스코",
+   "brazilian"
+  ],
+  "turkish_kebab": [
+   "터키 요리",
+   "케밥",
+   "ケバブ",
+   "kebab",
+   "turkish"
+  ],
+  "hawaiian": [
+   "하와이 요리",
+   "로코모코",
+   "포케",
+   "ハワイアン",
+   "hawaiian"
+  ],
+  "halal": [
+   "할랄",
+   "ハラール",
+   "halal"
+  ],
+  "cafe": [
+   "카페"
+  ],
+  "coffee": [
+   "커피",
+   "커피숍",
+   "코히",
+   "コーヒー",
+   "coffee",
+   "스페셜티커피"
+  ],
+  "tea_room": [
+   "찻집",
+   "티룸",
+   "녹차",
+   "말차",
+   "tea"
+  ],
+  "pet_cafe": [
+   "펫카페",
+   "고양이카페",
+   "동물카페",
+   "猫カフェ",
+   "cat cafe",
+   "부엉이카페"
+  ],
+  "bubble_tea": [
+   "버블티",
+   "타피오카",
+   "タピオカ",
+   "bubble tea"
+  ],
+  "juice_bar": [
+   "주스",
+   "생과일주스",
+   "ジュース",
+   "juice"
+  ],
+  "dessert": [
+   "디저트"
+  ],
+  "pastry": [
+   "케이크",
+   "페이스트리",
+   "ケーキ",
+   "パティスリー",
+   "pastry",
+   "cake"
+  ],
+  "ice_cream": [
+   "아이스크림",
+   "젤라토",
+   "ソフトクリーム",
+   "소프트크림",
+   "ice cream",
+   "gelato"
+  ],
+  "crepe": [
+   "크레페",
+   "クレープ",
+   "crepe"
+  ],
+  "donut": [
+   "도넛",
+   "도너츠",
+   "ドーナツ",
+   "donut"
+  ],
+  "wagashi": [
+   "화과자",
+   "와가시",
+   "和菓子",
+   "wagashi",
+   "당고",
+   "모치"
+  ],
+  "bakery": [
+   "베이커리"
+  ],
+  "burger": [
+   "버거",
+   "햄버거",
+   "バーガー",
+   "burger",
+   "핫도그"
+  ],
+  "fast_food": [
+   "패스트푸드"
+  ],
+  "sandwich": [
+   "샌드위치",
+   "サンド",
+   "sandwich"
+  ],
+  "salad_soup": [
+   "샐러드",
+   "수프",
+   "サラダ",
+   "スープ",
+   "salad",
+   "soup"
+  ],
+  "vegan": [
+   "비건",
+   "채식",
+   "베지테리언",
+   "ヴィーガン",
+   "vegan",
+   "vegetarian"
+  ],
+  "okinawa_soba": [
+   "오키나와 소바",
+   "소키소바",
+   "沖縄そば",
+   "ソーキそば"
+  ]
+ },
+ "terms": {
+  "일식": {
+   "coarse": [
+    "ramen",
+    "udon_soba",
+    "sushi",
+    "katsu_tempura",
+    "yakitori",
+    "okonomi",
+    "teishoku_don",
+    "curry",
+    "kaiseki",
+    "nabe",
+    "jp_other"
+   ],
+   "broad": [
+    "japanese"
+   ]
+  },
+  "和食": {
+   "coarse": [
+    "ramen",
+    "udon_soba",
+    "sushi",
+    "katsu_tempura",
+    "yakitori",
+    "okonomi",
+    "teishoku_don",
+    "curry",
+    "kaiseki",
+    "nabe",
+    "jp_other"
+   ],
+   "broad": [
+    "japanese"
+   ]
+  },
+  "일본 음식": {
+   "coarse": [
+    "ramen",
+    "udon_soba",
+    "sushi",
+    "katsu_tempura",
+    "yakitori",
+    "okonomi",
+    "teishoku_don",
+    "curry",
+    "kaiseki",
+    "nabe",
+    "jp_other"
+   ],
+   "broad": [
+    "japanese"
+   ]
+  },
+  "현지 음식": {
+   "coarse": [
+    "ramen",
+    "udon_soba",
+    "sushi",
+    "katsu_tempura",
+    "yakitori",
+    "okonomi",
+    "teishoku_don",
+    "curry",
+    "kaiseki",
+    "nabe",
+    "jp_other",
+    "izakaya"
+   ],
+   "broad": [
+    "japanese"
+   ]
+  },
+  "면": {
+   "coarse": [
+    "ramen",
+    "udon_soba"
+   ],
+   "fine": [],
+   "broad": [
+    "noodle"
+   ]
+  },
+  "면요리": {
+   "coarse": [
+    "ramen",
+    "udon_soba"
+   ],
+   "broad": [
+    "noodle"
+   ]
+  },
+  "국수": {
+   "coarse": [
+    "udon_soba"
+   ],
+   "broad": [
+    "noodle"
+   ]
+  },
+  "술": {
+   "coarse": [
+    "izakaya",
+    "bar"
+   ]
+  },
+  "술집": {
+   "coarse": [
+    "izakaya",
+    "bar"
+   ]
+  },
+  "고기": {
+   "coarse": [
+    "yakiniku",
+    "steak_hamburg"
+   ],
+   "fine": [
+    "tonkatsu",
+    "yakitori",
+    "sukiyaki",
+    "shabu_shabu"
+   ]
+  },
+  "해산물": {
+   "fine": [
+    "seafood",
+    "sushi",
+    "unagi"
+   ]
+  },
+  "회": {
+   "fine": [
+    "seafood",
+    "sushi"
+   ]
+  },
+  "생선": {
+   "fine": [
+    "seafood",
+    "sushi",
+    "unagi"
+   ]
+  },
+  "가벼운 식사": {
+   "coarse": [
+    "cafe",
+    "bakery",
+    "fastfood"
+   ],
+   "fine": [
+    "sandwich",
+    "salad_soup",
+    "bento_deli",
+    "udon",
+    "soba"
+   ]
+  },
+  "아시아": {
+   "coarse": [
+    "asian",
+    "chinese",
+    "korean"
+   ],
+   "broad": [
+    "asian_food"
+   ]
+  },
+  "에스닉": {
+   "coarse": [
+    "asian",
+    "foreign_other"
+   ]
+  }
+ }
+}

@@ -1,0 +1,107 @@
+[
+ {
+  "priority": "1",
+  "category": "ramen",
+  "pattern": "ラーメン|らーめん|ramen|つけ麺|tsukemen"
+ },
+ {
+  "priority": "2",
+  "category": "udon_soba",
+  "pattern": "うどん|udon|そば|蕎麦|soba"
+ },
+ {
+  "priority": "3",
+  "category": "sushi",
+  "pattern": "寿司|すし|鮨|sushi"
+ },
+ {
+  "priority": "4",
+  "category": "yakitori",
+  "pattern": "焼き鳥|焼鳥|やきとり|yakitori"
+ },
+ {
+  "priority": "5",
+  "category": "katsu_tempura",
+  "pattern": "とんかつ|豚カツ|tonkatsu|天ぷら|天丼|tempura|唐揚|からあげ|karaage|串カツ|串揚"
+ },
+ {
+  "priority": "6",
+  "category": "okonomi",
+  "pattern": "お好み焼|たこ焼|okonomiyaki|takoyaki|もんじゃ"
+ },
+ {
+  "priority": "7",
+  "category": "yakiniku",
+  "pattern": "焼肉|焼き肉|yakiniku|ホルモン|korean barbecue"
+ },
+ {
+  "priority": "8",
+  "category": "nabe",
+  "pattern": "しゃぶしゃぶ|すき焼|shabu|sukiyaki|もつ鍋|鍋"
+ },
+ {
+  "priority": "9",
+  "category": "curry",
+  "pattern": "カレー|curry"
+ },
+ {
+  "priority": "10",
+  "category": "teishoku_don",
+  "pattern": "牛丼|gyudon|beef bowl|定食|丼|弁当|bento|donburi"
+ },
+ {
+  "priority": "11",
+  "category": "steak_hamburg",
+  "pattern": "ステーキ|ハンバーグ|steak|hamburg steak|steakhouse"
+ },
+ {
+  "priority": "12",
+  "category": "fastfood",
+  "pattern": "ハンバーガー|hamburger|burger|fast food|fast-food|ファストフード|fried chicken|フライドチキン|hot dog|sandwich"
+ },
+ {
+  "priority": "13",
+  "category": "chinese",
+  "pattern": "中華|中国料理|chinese|餃子|gyoza|dumpling|ちゃんぽん"
+ },
+ {
+  "priority": "14",
+  "category": "korean",
+  "pattern": "韓国|korean"
+ },
+ {
+  "priority": "15",
+  "category": "asian",
+  "pattern": "タイ料理|thai|インド|indian|ネパール|vietnam|ベトナム|asian"
+ },
+ {
+  "priority": "16",
+  "category": "western",
+  "pattern": "イタリア|italian|pizza|ピザ|パスタ|pasta|フレンチ|french|洋食|family restaurant|ファミリーレストラン|seafood restaurant|american"
+ },
+ {
+  "priority": "17",
+  "category": "izakaya",
+  "pattern": "居酒屋|izakaya|大衆酒場"
+ },
+ {
+  "priority": "18",
+  "category": "bar",
+  "pattern": "\\bpub\\b|パブ|\\bbar\\b"
+ },
+ {
+  "priority": "19",
+  "category": "bakery",
+  "pattern": "ベーカリー|パン屋|bakery|boulangerie"
+ },
+ {
+  "priority": "20",
+  "category": "sweets",
+  "pattern": "ドーナツ|donut|doughnut|アイスクリーム|ice cream|ケーキ|cake|菓子|confection|dessert|スイーツ|パンケーキ|pancake|クレープ|crepe|gelato|frozen yogurt"
+ },
+ {
+  "priority": "21",
+  "category": "cafe",
+  "pattern": "コーヒー|珈琲|喫茶|カフェ|coffee|café|cafe|tea|茶"
+ }
+]
